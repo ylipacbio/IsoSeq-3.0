@@ -76,3 +76,4 @@ Cluster can be run with a variety of options described below.
 | -------------------------- | --------------------------- | ----------------- |
 | Help  | -h, --help | This prints the help message |
 | Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
+| Quality Values FOFN  | --ccs_fofn CCS_FOFN | A FOFN of ccs.h5 or ccs.bam (e.g., ccs.fofn), which contain quality values of consensus (CCS) reads. If not given, assume there is no QV information available. |
