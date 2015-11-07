@@ -37,6 +37,7 @@ Classify can be run with a variety of options described below.
 |           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
+| Primers | -p PRIMERFN.fasta, --primer PRIMERFN.fasta  | Primer fasta file (default: primers.fa) |
 
 |           Chimera-detection Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
