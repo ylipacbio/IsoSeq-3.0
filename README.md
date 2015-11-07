@@ -61,7 +61,7 @@ Cluster can be run at the command line as follows:
 
      pbtranscript cluster [OPTIONS] flnc_fa consensusFa
 
-The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
+The input file and the output file must be fasta format. An example command would be:
 
     pbtranscript cluster [OPTIONS] isoseq_flnc.fasta output.fasta
     
@@ -107,4 +107,31 @@ Cluster can be run with a variety of options described below.
 | High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
 | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
 | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
+
+
+## Subset
+
+Subset can be run at the command line as follows:
+
+     pbtranscript subset [OPTIONS] readsFN outFN
+
+The input file and the output file must be fasta format. An example command would be:
+
+    pbtranscript subset [OPTIONS] isoseq_draft.fasta isoseq_subset.fasta
+    
+Cluster can be run with a variety of options described below.  
+
+|           Positional Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Input Sequences  | isoseq_draft.fasta  | Input fasta file (usually isoseq_draft.fasta) |
+| Output Sequences | isoseq_subset.fasta | Output fasta file |
+
+|           Optional Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Help  | -h, --help | This prints the help message |
+| Output Full-length  | --FL | Reads to output must be Full-Length, with 3' primer and 5' primer and polyA tail seen. |
+| Output Non-Full-length  | --nonFL | Reads to output must be Non-Full-Length reads. |
+| Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
+| Output Read-Length  | -printReadLengthOnly | Only print read lengths, no read names and sequences. |
+| Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
