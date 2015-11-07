@@ -37,7 +37,7 @@ Classify can be run with a variety of options described below.
 |           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
-| Summary | -summary SUMMARY_FN.txt | TXT file to output classsify summary (default: classify_summary.txt) |
+| Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: classify_summary.txt) |
 | Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
 | Primers Report | --report PRIMERREPORTFN  | CSV file to output primer info (default: .primer_info.csv) |
 | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
@@ -84,10 +84,27 @@ Cluster can be run with a variety of options described below.
 | Report  | --report REPORT_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
 | Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION |
 
+|           ICE Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
+| Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
+| Finer Quiver  | -h, --help | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
 
+|           ICE Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Run SGE  | --use_sge | Instructs Cluster to use SGE |
+| Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
+| SGE Job ID  | --unique_id UNIQUE_ID | Unique ID for submitting SGE jobs. |
+| BLASR Cores  | --blasr_nproc BLASR_NPROC | Number of cores for each BLASR job. |
+| Quiver CPUs  | --quiver_nproc QUIVER_NPROC | Number of CPUs each quiver job uses. |
 
-
-
-
-
+|           IceQuiver High QV/Low QV Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
+| Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
+| Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
+| High-Quality Isoforms FASTA  | --hq_isoforms_fa HQ_ISOFORMS_FA | Quiver polished, high quality isoforms in fasta, default: root_dir/output/all_quivered_hq.fa |
+| High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
+| Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
+| Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
 
