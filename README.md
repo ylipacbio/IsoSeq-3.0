@@ -23,6 +23,18 @@ The input file can be fasta or bam format, and the output file must be fasta for
     
 Classify can be run with a variety of options described below.  
 
-|           Option           |     Example (Defaults)      |  Explanation      |
+|           Positional Arguments           |     Example (Defaults)      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+
+|           Optional Arguments           |     Example (Defaults)      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+
+|           HMMER Arguments           |     Example (Defaults)      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+
+|           Chimera-detection Arguments           |     Example (Defaults)      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
