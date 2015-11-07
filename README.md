@@ -38,8 +38,8 @@ Classify can be run with a variety of options described below.
 | -------------------------- | --------------------------- | ----------------- |
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
 | Summary | -summary SUMMARY_FN.txt | TXT file to output classsify summary (default: classify_summary.txt) |
-| Primers File | --report PRIMERREPORTFN.csv  | CSV file to output primer info (default: .primer_info.csv) |
-| Primers Report | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
+| Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
+| Primers Report | --report PRIMERREPORTFN  | CSV file to output primer info (default: .primer_info.csv) |
 | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
 
 
