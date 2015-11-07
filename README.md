@@ -46,4 +46,5 @@ Classify can be run with a variety of options described below.
 
 |           Chimera-detection Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+| Minimum Sequence Length  | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
+| Minimum Sequence Length  | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
