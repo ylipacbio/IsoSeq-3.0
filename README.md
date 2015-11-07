@@ -32,7 +32,7 @@ Classify can be run with a variety of options described below.
 | -------------------------- | --------------------------- | ----------------- |
 | Help  | -h, --help | This prints the help message |
 | Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta | Outputs full-length non-chimeric reads in fasta |
-| Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta |
+| Output Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta |
 
 |           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -55,3 +55,24 @@ Classify can be run with a variety of options described below.
 | Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
+## Cluster
+
+Cluster can be run at the command line as follows:
+
+     pbtranscript cluster [OPTIONS] flnc_fa consensusFa
+
+The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
+
+    pbtranscript cluster [OPTIONS] isoseq_flnc.fasta output.fasta
+    
+Cluster can be run with a variety of options described below.  
+
+|           Positional Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Input Reads  | isoseq_flnc.fasta  | Input full-length non-chimeric reads in fasta format, used for clustering consensus isoforms |
+| Output Isoforms | out.fasta | Output predicted (unpolished) consensus isoforms in fasta file. |
+
+|           Optional Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Help  | -h, --help | This prints the help message |
+| Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
