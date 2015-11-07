@@ -23,21 +23,21 @@ The input file can be fasta or bam format, and the output file must be fasta for
     
 Classify can be run with a variety of options described below.  
 
-|           Positional Arguments           |     Example (Defaults)      |  Explanation      |
+|           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | readsFN  | ccs.bam  | This is the second-to-last argument and it names the file containing the input sequence data in BAM or FASTA format |
 | outReadsFN | out.fasta | This is the last argument and it names the file containing the input sequence data in BAM or FASTA format |
 
-|           Optional Arguments           |     Example (Defaults)      |  Explanation      |
+|           Optional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Help  | -h, --help | This prints the help message |
-| Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta | Output full-length non-chimeric reads in fasta |
+| Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta | Outputs full-length non-chimeric reads in fasta |
 | Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta |
 
-|           HMMER Arguments           |     Example (Defaults)      |  Explanation      |
+|           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+| HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
 
-|           Chimera-detection Arguments           |     Example (Defaults)      |  Explanation      |
+|           Chimera-detection Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
