@@ -50,6 +50,8 @@ Classify can be run with a variety of options described below.
 | Minimum PHMMER Score  | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
 | Non-Full-Length Chimeras  | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
 
-
+|      Read-Extraction Arguments     |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
