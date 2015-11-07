@@ -38,6 +38,8 @@ Classify can be run with a variety of options described below.
 | -------------------------- | --------------------------- | ----------------- |
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
 | Primers | -p PRIMERFN.fasta, --primer PRIMERFN.fasta  | Primer fasta file (default: primers.fa) |
+| CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
+| Summary | -summary SUMMARY_FN.txt | TXT file to output classsify summary (default: classify_summary.txt |
 
 |           Chimera-detection Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
