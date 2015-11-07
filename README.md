@@ -44,7 +44,12 @@ Classify can be run with a variety of options described below.
 
 
 
-|           Chimera-detection Arguments           |     Example      |  Explanation      |
+|      Chimera-detection Arguments     |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Minimum Sequence Length  | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
-| Minimum Sequence Length  | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
+| Minimum PHMMER Score  | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
+| Non-Full-Length Chimeras  | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
+
+
+
+
