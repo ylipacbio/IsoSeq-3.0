@@ -4,6 +4,6 @@ The isoform sequencing (Iso-Seq) application generates full-length cDNA sequence
 
 ## Command-Line Overview
 Analyses are performed using three tools
-*Classify
-*Cluster
-*Subset
+* Classify
+* Cluster
+* Subset
