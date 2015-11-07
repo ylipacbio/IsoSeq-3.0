@@ -80,5 +80,14 @@ Cluster can be run with a variety of options described below.
 | Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5 or bam files (e.g., input.fofn), which contain quality values of raw reads and subreads |
 | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
 | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
-| Help  | -h, --help | This prints the help message |
-| Help  | -h, --help | This prints the help message |
+| Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
+| Report  | --report REPORT_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
+| Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION |
+
+
+
+
+
+
+
+
