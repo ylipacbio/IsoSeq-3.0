@@ -25,7 +25,8 @@ Classify can be run with a variety of options described below.
 
 |           Positional Arguments           |     Example (Defaults)      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| Output File Name           | myResult.bam                | This argument is the first argument that comes after the named arguments shown below. |
+| readsFN           | ccs.bam                | This argument is the second-to-last argument and it names the file containing the input sequence data in BAM or FASTA format |
+| outReadsFN           | out.fasta                | This argument is the last argument and it names the file containing the input sequence data in BAM or FASTA format |
 
 |           Optional Arguments           |     Example (Defaults)      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
