@@ -15,7 +15,7 @@ Analyses are performed using three tools
 ## File Inputs and Outputs
 to-do
 
-## Command-Line Options
+## Command-Line Manual
 ## Classify
 
 Classify can be run at the command line as follows:
