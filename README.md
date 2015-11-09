@@ -7,7 +7,7 @@ Analyses are performed using three tools
 * Classify
   * Classify is the first program to be run when performing an IsoSeq analysis. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but Classify does not remove PCR chimeras. 
 * Cluster
-  * Cluster performs isoform-level clustering and outputs Quiver-polished high-quality consensus full-length transcript sequences
+  * Cluster is the second program to be run when performing an IsoSeq analysis. Cluster performs isoform-level clustering and outputs Quiver-polished high-quality consensus full-length transcript sequences. 
 * Subset
   * description of Subset
 
