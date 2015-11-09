@@ -5,9 +5,9 @@ The isoform sequencing (Iso-Seq) application generates full-length cDNA sequence
 ## Command-Line Overview
 Analyses are performed using three tools
 * Classify
-  * description of Classify
+  * Classify is the first program to be run when performing an IsoSeq analysis. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but Classify does not remove PCR chimeras. 
 * Cluster
-  * description of Cluster
+  * Cluster performs isoform-level clustering and outputs Quiver-polished high-quality consensus full-length transcript sequences
 * Subset
   * description of Subset
 
