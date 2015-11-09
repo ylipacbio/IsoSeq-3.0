@@ -10,7 +10,7 @@ Analyses are performed using three tools
 * Cluster
   * Cluster is the second program to be run when performing an IsoSeq analysis. The key outputs of Cluster is a file of polished, high-quality consensus sequences, and a file of polished, low-quality consensus sequences. The key input of clustering is the file of full-length non-chimeric reads, and a file of non-full length reads outputted by Classify. 
 * Subset
-  * description of Subset
+  * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
 
 ## File Inputs and Outputs
 
