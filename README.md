@@ -1,14 +1,14 @@
 # IsoSeq-3.0 : Generating full-length cDNA sequences for transcriptomics
 
-The isoform sequencing (Iso-Seq) application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
+The isoform sequencing (IsoSeq) application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
 
 ## Command-Line Overview
 ## Classify, Cluster, Subset
 Analyses are performed using three tools
 * Classify
-  * Classify is the first program to be run when performing an IsoSeq analysis. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but Classify does not remove PCR chimeras. 
+  * Classify is the first program to be run when performing an IsoSeq analysis. The key output of Classify is a file of full-length non-chimeric reads, and a file of non-full length reads. The key input of Classify is the set of subreads produced from running CCS on the subreads from your PacBio instrument. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but does not remove PCR chimeras. 
 * Cluster
-  * Cluster is the second program to be run when performing an IsoSeq analysis. Cluster performs isoform-level clustering and outputs Quiver-polished high-quality consensus full-length transcript sequences. 
+  * Cluster is the second program to be run when performing an IsoSeq analysis. The key outputs of Cluster is a file of polished, high-quality consensus sequences, and a file of polished, low-quality consensus sequences. The key input of clustering is the file of full-length non-chimeric reads, and a file of non-full length reads outputted by Classify. 
 * Subset
   * description of Subset
 
