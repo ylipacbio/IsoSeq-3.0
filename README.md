@@ -12,7 +12,7 @@ Analyses are performed using three tools
 * __Subset__
   * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
 
-## File Inputs and Outputs
+## Files
 
 __classify_summary.txt__ 
 This file contains the following statistics
