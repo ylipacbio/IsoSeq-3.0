@@ -120,7 +120,7 @@ Cluster can be run with a variety of options described below.
 | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
 | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
 | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
-| Report  | --report REPORT_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
+| Report  | --report REPORT_FN | NO DESCRIPTION |
 | Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION |
 
 |           ICE Arguments           |     Example      |  Explanation      |
@@ -171,6 +171,6 @@ Cluster can be run with a variety of options described below.
 | Output Full-length  | --FL | Reads to output must be Full-Length, with 3' primer and 5' primer and polyA tail seen. |
 | Output Non-Full-length  | --nonFL | Reads to output must be Non-Full-Length reads. |
 | Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
-| Output Read-Length  | -printReadLengthOnly | Only print read lengths, no read names and sequences. |
+| Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
