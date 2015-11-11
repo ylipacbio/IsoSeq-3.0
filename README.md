@@ -14,7 +14,15 @@ Analyses are performed using three tools
 
 ## Files
 
-__classify_summary.txt__ 
+__Classify Output FASTA__
+Reads from classify look like this
+
+```
+     m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
+     
+ ```
+
+__Classify Summary File__ 
 This file contains the following statistics
 * Number of reads of insert
 * Number of five prime reads
