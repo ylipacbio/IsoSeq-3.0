@@ -21,6 +21,18 @@ Reads from classify look like this
      m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
      
  ```
+The informational fields are:
+* strand: either + or -,  whether a read is forward or reverse-complement cdna,
+* fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
+* polyAseen: whether or not poly A tail is seen
+* threeseen: whether or not 3' prime is seen
+* fiveend=30: start position of 5'
+* threeend: start position of 3' in read
+* polyAend: start position of polyA in read
+* primer = 1 : index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
+* chimera: whether or not this read is classified as  a chimeric cdna
+
+
 
 __Classify Summary File__ 
 This file contains the following statistics
