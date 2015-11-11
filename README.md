@@ -35,7 +35,7 @@ The info fields are:
 
 
 __Classify Summary File__ 
-This file contains the following statistics
+This file contains the following statistics:
 * Number of reads of insert
 * Number of five prime reads
 * Number of three prime reads
