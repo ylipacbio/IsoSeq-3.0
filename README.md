@@ -26,10 +26,10 @@ The informational fields are:
 * fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
 * polyAseen: whether or not poly A tail is seen
 * threeseen: whether or not 3' prime is seen
-* fiveend=30: start position of 5'
+* fiveend: start position of 5'
 * threeend: start position of 3' in read
 * polyAend: start position of polyA in read
-* primer = 1 : index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
+* primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
 
