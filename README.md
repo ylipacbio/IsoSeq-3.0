@@ -13,7 +13,21 @@ Analyses are performed using three tools
   * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
 
 ## File Inputs and Outputs
-to-do
+
+__classify_summary.txt__ 
+This file contains the following statistics
+* Number of reads of insert
+* Number of five prime reads
+* Number of three prime reads
+* Number of poly-A reads
+* Number of filtered short reads
+* Number of non-full-length reads
+* Number of full-length reads
+* Number of full-length non-chimeric reads
+* Average full-length non-chimeric read length
+
+
+
 
 ## Command-Line Manual
 ## Classify
