@@ -35,7 +35,7 @@ The info fields are:
 * primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
-__Summary File__ 
+__Summary__ 
 This file contains the following statistics:
 * Number of reads of insert
 * Number of five prime reads
