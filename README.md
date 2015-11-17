@@ -6,14 +6,14 @@ Table of contents
 =================
 
   * [Command-Line Overview](#command-line-overview)
-  * [Usage](#usage)
-    * [STDIN](#stdin)
+  * [Files](#files)
+    * [Command-Line Manual](#command-line-manual)
     * [Local files](#local-files)
     * [Remote files](#remote-files)
     * [Multiple files](#multiple-files)
     * [Combo](#combo)
-  * [Tests](#tests)
-  * [Dependency](#dependency)
+  * [Algorithms](#algorithms)
+  * [Glossary](#glossary)
 
 
 
@@ -205,7 +205,7 @@ Cluster can be run with a variety of options described below.
 | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
-## Algorithm Details
+## Algorithms
 __Classify__
 
 todo (yli)
