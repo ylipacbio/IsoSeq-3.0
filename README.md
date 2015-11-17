@@ -70,7 +70,7 @@ todo
 
 Classify can be run at the command line as follows:
 
-     pbtranscript classify [OPTIONS] input_file output_file
+     pbtranscript classify [OPTIONS] readsFN outReadsFN
 
 The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
 
