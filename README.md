@@ -51,18 +51,18 @@ __Primers File__
 todo (yli)
 
 __Primers Report__
-todo
+todo (yli)
 
 ##Cluster Files
 
 __Output Isoforms__
-todo
+todo (yli)
 
 __Summary__
-todo
+todo (yli)
 
 __Report__
-todo
+todo (yli)
 
 
 ## Command-Line Manual
@@ -136,8 +136,8 @@ Cluster can be run with a variety of options described below.
 | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
 | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
 | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
-| Report  | --report REPORT_FN | NO DESCRIPTION |
-| Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION |
+| Report  | --report REPORT_FN | NO DESCRIPTION (yli) |
+| Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION (yli) |
 
 |           ICE Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -193,11 +193,11 @@ Cluster can be run with a variety of options described below.
 ## Algorithm Details
 __Classify__
 
-todo
+todo (yli)
 
 __Cluster__
 
-todo
+todo (yli)
 
 __HMMER__
 
@@ -205,14 +205,14 @@ HMMER is used for searching sequence databases for homologs of protein sequences
 
 __ICE__
 
-todo
+todo (yli)
 
 __Quiver__
 
-todo
+todo (yli)
 
 ## Glossary
 * __Chimera__
-  * todo
+  * todo (yli)
 * __Concatemer__
-  * todo
+  * todo (yli)
