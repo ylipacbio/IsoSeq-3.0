@@ -178,3 +178,13 @@ Cluster can be run with a variety of options described below.
 | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
+## Algorithm Details
+__HMMER__
+explanation
+__ICE__
+explanation
+## Glossary
+* __Chimera__
+  * explanation
+* __Concatemer__
+  * explanation
