@@ -180,9 +180,13 @@ Cluster can be run with a variety of options described below.
 
 ## Algorithm Details
 __HMMER__
+
 explanation
+
 __ICE__
+
 explanation
+
 ## Glossary
 * __Chimera__
   * explanation
