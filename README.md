@@ -7,11 +7,13 @@ Table of contents
 
   * [Command-Line Overview](#command-line-overview)
   * [Files](#files)
-    * [Command-Line Manual](#command-line-manual)
-    * [Local files](#local-files)
-    * [Remote files](#remote-files)
-    * [Multiple files](#multiple-files)
-    * [Combo](#combo)
+    * [Classify](#command-line-manual)
+    * [Cluster](#local-files)
+  * [Optional Files](#remote-files)
+  * [Command Options](#command-line-options)
+    * [Classify](#classify-options)
+    * [Cluster](#cluster-options)
+    * [Subset](#subset-options)
   * [Algorithms](#algorithms)
   * [Glossary](#glossary)
 
@@ -80,8 +82,8 @@ __Report__
 todo (yli)
 
 
-## Command-Line Manual
-## Classify
+## Command-Line Options
+## Classify Options
 
 Classify can be run at the command line as follows:
 
@@ -125,7 +127,7 @@ Classify can be run with a variety of options described below.
 | Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-## Cluster
+## Cluster Options
 
 Cluster can be run at the command line as follows:
 
@@ -179,7 +181,7 @@ Cluster can be run with a variety of options described below.
 | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
 
 
-## Subset
+## Subset Options
 
 Subset can be run at the command line as follows:
 
