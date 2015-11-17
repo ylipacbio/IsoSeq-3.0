@@ -181,7 +181,7 @@ Cluster can be run with a variety of options described below.
 ## Algorithm Details
 __HMMER__
 
-explanation
+HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
 
 __ICE__
 
