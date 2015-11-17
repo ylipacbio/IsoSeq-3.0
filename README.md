@@ -48,7 +48,7 @@ This file contains the following statistics:
 * Average full-length non-chimeric read length
 
 __Primers File__
-todo
+todo (yli)
 
 __Primers Report__
 todo
