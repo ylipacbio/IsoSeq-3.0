@@ -7,8 +7,8 @@ Table of contents
 
   * [Command-Line Overview](#command-line-overview)
   * [Files](#files)
-    * [Classify](#command-line-manual)
-    * [Cluster](#local-files)
+    * [Classify](#classify-files)
+    * [Cluster](#cluster-files)
   * [Optional Files](#remote-files)
   * [Command Options](#command-line-options)
     * [Classify](#classify-options)
@@ -29,6 +29,7 @@ Analyses are performed using three tools
 * __Subset__
   * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
 
+## Files
 ## Classify Files
 __Output FASTA__
 Reads from Classify look like this:
@@ -81,6 +82,7 @@ todo (yli)
 __Report__
 todo (yli)
 
+## Optional Files
 
 ## Command-Line Options
 ## Classify Options
