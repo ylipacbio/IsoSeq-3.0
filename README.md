@@ -13,7 +13,6 @@ Analyses are performed using three tools
   * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
 
 ## Files
-
 __Classify Output FASTA__
 Reads from Classify look like this:
 
@@ -36,8 +35,6 @@ The info fields are:
 * primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
-
-
 __Classify Summary File__ 
 This file contains the following statistics:
 * Number of reads of insert
@@ -50,7 +47,20 @@ This file contains the following statistics:
 * Number of full-length non-chimeric reads
 * Average full-length non-chimeric read length
 
+__Classify Primers File__
+todo
 
+__Classify Primers Report__
+todo
+
+__Cluster Output Isoforms__
+todo
+
+__Cluster Summary__
+todo
+
+__Cluster Report__
+todo
 
 
 ## Command-Line Manual
