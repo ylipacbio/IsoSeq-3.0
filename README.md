@@ -5,7 +5,7 @@ The isoform sequencing (IsoSeq) application generates full-length cDNA sequences
 Table of contents
 =================
 
-  * [Command-Line Overview](#Command-Line-Overview)
+  * [Command-Line Overview](#command-line-overview)
   * [Usage](#usage)
     * [STDIN](#stdin)
     * [Local files](#local-files)
