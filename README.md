@@ -213,6 +213,6 @@ todo
 
 ## Glossary
 * __Chimera__
-  * explanation
+  * todo
 * __Concatemer__
-  * explanation
+  * todo
