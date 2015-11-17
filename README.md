@@ -179,13 +179,25 @@ Cluster can be run with a variety of options described below.
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
 ## Algorithm Details
+__Classify__
+
+todo
+
+__Cluster__
+
+todo
+
 __HMMER__
 
 HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
 
 __ICE__
 
-explanation
+todo
+
+__Quiver__
+
+todo
 
 ## Glossary
 * __Chimera__
