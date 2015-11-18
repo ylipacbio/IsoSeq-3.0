@@ -39,9 +39,9 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one
 
 ##Running with SMRTLink
 
-##Running on the Command-Line
-
 ##Running on the Command-Line with PBSMRTPipe
+
+##Running on the Command-Line without PBSRMTPipe
 
 ## Files
 ## Classify Files
