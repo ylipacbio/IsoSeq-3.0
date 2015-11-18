@@ -6,10 +6,10 @@ Table of contents
 =================
 
   * [Command-Line Overview](#command-line-overview)
-  * [Manual](#)
-    * [Running with SMRTLink](#)
-    * [Running on the Command-Line](#)
-    * [Running on the Command-Line with PBSMRTPipe](#)
+  * [Manual](#manual)
+    * [Running with SMRTLink](#running-with-smrtlink)
+    * [Running on the Command-Line](#running-on-the-command-line)
+    * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
