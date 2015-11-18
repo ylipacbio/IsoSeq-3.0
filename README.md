@@ -46,8 +46,8 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one
 Without PBSMRTPipe, the analysis is performed in 3 steps:
 
 1. Run CCS on your subreads, generating a CCS BAM file, and generate an XML from the BAM file.
-2. Run Classify on your reads with the XML as input, generating a fasta of clustered reads.
-3. Run Cluster on the fasta produced by Classify, generating polished isoforms. 
+2. Run Classify on your reads with the XML as input, generating a FASTA.
+3. Run Cluster on the FASTA produced by Classify, generating polished isoforms. 
 
 __Step 1. CCS__
 
