@@ -164,7 +164,7 @@ Cluster can be run with a variety of options described below.
 | Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
 | Finer Quiver  | -h, --help | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
 
-|           SGE environment           |     Example      |  Explanation      |
+|           SGE environment Arguments          |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Run SGE  | --use_sge | Instructs Cluster to use SGE |
 | Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
