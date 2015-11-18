@@ -35,7 +35,7 @@ Analyses are performed using three tools
 
 ##Manual
 
-There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one the command-line using pbsmrtpipe so that you can run the whole IsoSeq job with one command given to pbsmrtpipe. 
+There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on the command-line using pbsmrtpipe so that you can run the whole IsoSeq job with one command given to pbsmrtpipe. 
 
 ##Running with SMRTLink
 
@@ -45,13 +45,13 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one
 
 Without PBSMRTPipe, the analysis is performed in 3 steps:
 
-1. Run CCS on your subreads, generating a CCS BAM file, and generate an XML from the BAM file.
-2. Run Classify on your reads with the XML as input, generating a FASTA.
+1. Run CCS on your subreads, generating a CCS BAM file. Then generate an XML from the BAM file.
+2. Run Classify on your CCSs with the XML as input, generating a FASTA of annotated sequences.
 3. Run Cluster on the FASTA produced by Classify, generating polished isoforms. 
 
 __Step 1. CCS__
 
-First run the ccs command on your subreads. You can do this with the command:
+First convert your subreads to circular consensus sequences. You can do this with the command:
 
      ccs ccs.bam subreads.bam
 
@@ -66,9 +66,9 @@ __Step 2. Classify__
 
 Classify can be run at the command line as follows:
 
-     pbtranscript classify [OPTIONS] readsFN outReadsFN
+     pbtranscript classify [OPTIONS] ccs.xml classified.fasta
 
-The input file can be fasta or bam format, and the output file must be fasta format
+Where ccs.xml is the xml file you generated in Step 1, and classified.fasta is your output file. 
 
 __Step 3. Cluster__
 
