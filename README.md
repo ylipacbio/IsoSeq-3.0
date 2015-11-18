@@ -9,7 +9,7 @@ Table of contents
   * [Manual](#manual)
     * [Running with SMRTLink](#running-with-smrtlink)
     * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
-    * [Running on the Command-Line](#running-on-the-command-line-without-pbsmrtpipe)
+    * [Running on the Command-Line without PBSMRTPipe](#running-on-the-command-line-without-pbsmrtpipe)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
@@ -41,7 +41,7 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one
 
 ##Running on the Command-Line with PBSMRTPipe
 
-##Running on the Command-Line without PBSRMTPipe
+##Running on the Command-Line without PBSMRTPipe
 
 ## Files
 ## Classify Files
