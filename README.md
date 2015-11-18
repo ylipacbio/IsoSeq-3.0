@@ -43,6 +43,26 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one
 
 ##Running on the Command-Line without PBSMRTPipe
 
+Without PBSMRTPipe, the analysis is performed in 3 steps:
+
+1. Run CCS on your subreads, generating a CCS BAM file, and generate an XML from the BAM file.
+2. Run Classify on your reads with the XML as input, generating a fasta of clustered reads.
+3. Run Cluster on the fasta produced by Classify, generating polished isoforms. 
+
+__Step 1. Creating Circular Consensus Sequences.__
+
+First run the ccs command on your subreads. You can do this with the command:
+
+     ccs myresults.bam subreads.bam
+
+Where myresults.bam is the name of the bam where the CCSs will be output, and subreads.bam is the name of the bam file containing your subreads, produced by the pacbio machine. For more information on the CCS command, you can see https://github.com/PacificBiosciences/pbccs/blob/master/README.md. 
+The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
+
+    pbtranscript classify [OPTIONS] ccs.bam output.fasta
+    
+Classify can be run with a variety of options described below.
+
+
 ## Files
 ## Classify Files
 __Output FASTA__
