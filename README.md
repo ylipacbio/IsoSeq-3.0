@@ -49,18 +49,33 @@ Without PBSMRTPipe, the analysis is performed in 3 steps:
 2. Run Classify on your reads with the XML as input, generating a fasta of clustered reads.
 3. Run Cluster on the fasta produced by Classify, generating polished isoforms. 
 
-__Step 1. Creating Circular Consensus Sequences.__
+__Step 1. CCS__
 
 First run the ccs command on your subreads. You can do this with the command:
 
-     ccs myresults.bam subreads.bam
+     ccs ccs.bam subreads.bam
 
-Where myresults.bam is the name of the bam where the CCSs will be output, and subreads.bam is the name of the bam file containing your subreads, produced by the pacbio machine. For more information on the CCS command, you can see https://github.com/PacificBiosciences/pbccs/blob/master/README.md. 
-The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
+Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. For more information on the CCS command, you can see https://github.com/PacificBiosciences/pbccs/blob/master/README.md. 
+Next, you will generate an XML file from your CCSs. You can do this with the commmand:
 
-    pbtranscript classify [OPTIONS] ccs.bam output.fasta
-    
-Classify can be run with a variety of options described below.
+     dataset create --type ConsensusReadSet ccs.xml ccs.bam
+
+Where ccs.xml is the name of the xml file you are generating and ccs.bam is the name of the bam file you generated previously using the ccs command. 
+
+__Step 2. Classify__
+
+Classify can be run at the command line as follows:
+
+     pbtranscript classify [OPTIONS] readsFN outReadsFN
+
+The input file can be fasta or bam format, and the output file must be fasta format
+
+__Step 3. Cluster__
+
+Cluster can be run at the command line as follows:
+
+     pbtranscript cluster [OPTIONS] flnc_fa consensusFa
+
 
 
 ## Files
@@ -121,16 +136,6 @@ todo (yli)
 ## Command-Line Options
 ## Classify Options
 
-Classify can be run at the command line as follows:
-
-     pbtranscript classify [OPTIONS] readsFN outReadsFN
-
-The input file can be fasta or bam format, and the output file must be fasta format. An example command would be:
-
-    pbtranscript classify [OPTIONS] ccs.bam output.fasta
-    
-Classify can be run with a variety of options described below.  
-
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | readsFN  | ccs.bam  | This is the second-to-last argument and it names the file containing the input sequence data in BAM or FASTA format |
@@ -164,16 +169,6 @@ Classify can be run with a variety of options described below.
 
 
 ## Cluster Options
-
-Cluster can be run at the command line as follows:
-
-     pbtranscript cluster [OPTIONS] flnc_fa consensusFa
-
-The input file and the output file must be fasta format. An example command would be:
-
-    pbtranscript cluster [OPTIONS] isoseq_flnc.fasta output.fasta
-    
-Cluster can be run with a variety of options described below.  
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
