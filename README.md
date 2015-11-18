@@ -6,6 +6,10 @@ Table of contents
 =================
 
   * [Command-Line Overview](#command-line-overview)
+  * [Manual](#)
+    * [Running with SMRTLink](#)
+    * [Running on the Command-Line](#)
+    * [Running on the Command-Line with PBSMRTPipe](#)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
@@ -28,6 +32,16 @@ Analyses are performed using three tools
   * Cluster is the second program to be run when performing an IsoSeq analysis. The key outputs of Cluster is a file of polished, high-quality consensus sequences, and a file of polished, low-quality consensus sequences. The key input of clustering is the file of full-length non-chimeric reads, and a file of non-full length reads outputted by Classify. 
 * __Subset__
   * Subset is an optional program which can be used to subset the output files for particular classes of sequences, such as non-chimeric reads, or non-full-length reads. 
+
+##Manual
+
+There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and one the command-line using pbsmrtpipe so that you can run the whole IsoSeq job with one command given to pbsmrtpipe. 
+
+##Running with SMRTLink
+
+##Running on the Command-Line
+
+##Running on the Command-Line with PBSMRTPipe
 
 ## Files
 ## Classify Files
