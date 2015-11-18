@@ -76,7 +76,7 @@ Cluster can be run at the command line as follows:
 
      pbtranscript cluster [OPTIONS] flnc_fa consensusFa
 
-__Bonus Step__
+__Optional Step__
 
 Once Cluster has run, you can further subset your results using Subset. Subset can be run with the command:
 
