@@ -77,6 +77,12 @@ Cluster can be run at the command line as follows:
      pbtranscript cluster [OPTIONS] flnc_fa consensusFa
 
 
+Once Cluster has run, you can further subset your results using Subset. Subset can be run with the command:
+
+    pbtranscript subset [OPTIONS] isoseq_draft.fasta isoseq_subset.fasta
+
+Where isoseq_draft.fasta is the input FASTA and isoseq_subset.fasta is the output FASTA. 
+
 
 ## Files
 ## Classify Files
@@ -213,16 +219,6 @@ todo (yli)
 
 
 ## Subset Options
-
-Subset can be run at the command line as follows:
-
-     pbtranscript subset [OPTIONS] readsFN outFN
-
-The input file and the output file must be fasta format. An example command would be:
-
-    pbtranscript subset [OPTIONS] isoseq_draft.fasta isoseq_subset.fasta
-    
-Cluster can be run with a variety of options described below.  
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
