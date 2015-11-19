@@ -10,13 +10,13 @@ Table of contents
     * [Running with SMRTLink](#running-with-smrtlink)
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
-  * [Files](#files)
-    * [Classify](#classify-files)
-    * [Cluster](#cluster-files)
   * [Options](#options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
+  * [Files](#files)
+    * [Classify](#classify-files)
+    * [Cluster](#cluster-files)
   * [Algorithms](#algorithms)
   * [Glossary](#glossary)
 
@@ -117,53 +117,6 @@ Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
 pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subreads.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
 ```
 
-## Files
-## Classify Files
-__Output FASTA__
-Reads from Classify look like this:
-
-```
->m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
-ATAAGACGACGCTATATG
- ```
-These lines have the format: 
-```
-<movie_name>/<ZMW>/<start>_<end>_CCS INFO
-```
-The info fields are:
-* strand: either + or -,  whether a read is forward or reverse-complement cdna,
-* fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
-* polyAseen: whether or not poly A tail is seen, 1 yes, 0 no
-* threeseen: whether or not 3' prime is seen, 1 yes, 0 no
-* fiveend: start position of 5'
-* threeend: start position of 3' in read
-* polyAend: start position of polyA in read
-* primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
-* chimera: whether or not this read is classified as  a chimeric cdna
-
-__Summary (out.classify_summary.txt)__ 
-This file contains the following statistics:
-* Number of reads of insert
-* Number of five prime reads
-* Number of three prime reads
-* Number of poly-A reads
-* Number of filtered short reads
-* Number of non-full-length reads
-* Number of full-length reads
-* Number of full-length non-chimeric reads
-* Average full-length non-chimeric read length
-
-##Cluster Files
-
-__Output Isoforms__
-todo (yli)
-
-__Summary__
-todo (yli)
-
-__Report__
-todo (yli)
-
 ## Options
 ## Classify Options
 
@@ -258,6 +211,55 @@ todo (yli)
 | Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
 | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
+
+## Files
+## Classify Files
+__Output FASTA__
+Reads from Classify look like this:
+
+```
+>m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
+ATAAGACGACGCTATATG
+ ```
+These lines have the format: 
+```
+<movie_name>/<ZMW>/<start>_<end>_CCS INFO
+```
+The info fields are:
+* strand: either + or -,  whether a read is forward or reverse-complement cdna,
+* fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
+* polyAseen: whether or not poly A tail is seen, 1 yes, 0 no
+* threeseen: whether or not 3' prime is seen, 1 yes, 0 no
+* fiveend: start position of 5'
+* threeend: start position of 3' in read
+* polyAend: start position of polyA in read
+* primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
+* chimera: whether or not this read is classified as  a chimeric cdna
+
+__Summary (out.classify_summary.txt)__ 
+This file contains the following statistics:
+* Number of reads of insert
+* Number of five prime reads
+* Number of three prime reads
+* Number of poly-A reads
+* Number of filtered short reads
+* Number of non-full-length reads
+* Number of full-length reads
+* Number of full-length non-chimeric reads
+* Average full-length non-chimeric read length
+
+##Cluster Files
+
+__Output Isoforms__
+todo (yli)
+
+__Summary__
+todo (yli)
+
+__Report__
+todo (yli)
+
+
 
 ## Algorithms
 __Classify__
