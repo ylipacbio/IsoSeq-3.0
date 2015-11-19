@@ -23,12 +23,13 @@ Table of contents
 
 
 ## Overview
-## Classify, Cluster, Subset
-Analyses are performed in two stages, Classify and Cluster.
+Analyses are performed in three stages, CCS, Classify and Cluster. 
+* __CCS__
+  * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
 * __Classify__
-  * Classify is the first stage of an IsoSeq analysis. The key output of Classify is a file of full-length non-chimeric reads, and a file of non-full length reads. The key input of Classify is the set of subreads produced from running CCS on the subreads from your PacBio instrument. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but does not remove PCR chimeras. 
+  * Classify is the second stage of an IsoSeq analysis. The key output of Classify is a file of full-length non-chimeric reads, and a file of non-full length reads. The key input of Classify is the circular consensus sequences generated from CCS. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but does not remove PCR chimeras. 
 * __Cluster__
-  * Cluster is the second stage of an IsoSeq analysis. The key outputs of Cluster is a file of polished, high-quality consensus sequences, and a file of polished, low-quality consensus sequences. The key input of clustering is the file of full-length non-chimeric reads, and a file of non-full length reads outputted by Classify. 
+  * Cluster is the third stage of an IsoSeq analysis. The key outputs of Cluster is a file of polished, high-quality consensus sequences, and a file of polished, low-quality consensus sequences. The key input of clustering is the file of full-length non-chimeric reads, and a file of non-full length reads outputted by Classify. 
 
 ##Manual
 
@@ -50,7 +51,7 @@ First convert your subreads to circular consensus sequences. You can do this wit
 
      ccs ccs.bam subreads.bam
 
-Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. For more information on the CCS command, you can see https://github.com/PacificBiosciences/pbccs/blob/master/README.md. 
+Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. 
 Next, you will generate an XML file from your CCSs. You can do this with the commmand:
 
      dataset create --type ConsensusReadSet ccs.xml ccs.bam
