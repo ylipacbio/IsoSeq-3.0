@@ -254,11 +254,16 @@ __Output Isoforms__
 todo (yli)
 
 __Summary__
-todo (yli)
+This file contains the following statistics:
+* Number of consensus isoforms
+* Average consensus isoforms read length
+
 
 __Report__
-todo (yli)
-
+This is a csv file containing the following fields:
+* cluster_id
+* read_id
+* read_type
 
 
 ## Algorithms
