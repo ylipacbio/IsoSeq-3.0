@@ -13,7 +13,7 @@ Table of contents
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
-  * [Options](#command-line-options)
+  * [Options](#options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
