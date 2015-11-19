@@ -98,7 +98,20 @@ Now create a global options xml file and an isoseq options xml file.
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
 ```
 
+The options you may modify are now contained in the files global_options.xml and isoseq_options.xml. An entry in these files looks like this:
 
+```
+ <option id="pbtranscript.task_options.min_seq_len">
+            <value>300</value>
+        </option>
+```
+
+And you can modify them using your favorite text editor, such as vim.
+Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
+
+```
+pbsmrtpipe.pipelines.sa3_ds_isoseq --debug -e eid_subread:/full/path/to/subreadset.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
+```
 
 ## Files
 ## Classify Files
