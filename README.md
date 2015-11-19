@@ -216,9 +216,9 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 ## PBSMRTPipe IsoSeq Options
 |           Arguments           | Alternate Name |      Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| pbccs.task_options.min_read_score  | ? | Input fasta file (usually isoseq_draft.fasta) |
-| pbccs.task_options.max_drop_fraction | ? | Output fasta file |
-| pbtranscript.task_options.hq_quiver_min_accuracy | ? | Output fasta file |
+| pbccs.task_options.min_read_score  | ? | ? |
+| pbccs.task_options.max_drop_fraction | ? | ? |
+| pbtranscript.task_options.hq_quiver_min_accuracy | ? | ? |
 | pbtranscript.task_options.min_seq_len | Minimum Sequence Length | Minimum sequence length to output |
 | pbtranscript.task_options.qv_trim_3p | Trim QVs 3' | Ignore QV of n bases in the 3' end. |
 | pbtranscript.task_options.ignore_polya | Ignore polyA Tails | FL does not require polyA tail |
