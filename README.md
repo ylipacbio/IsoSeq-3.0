@@ -141,7 +141,7 @@ The info fields are:
 * primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
-__Summary__ 
+__Summary (out.classify_summary.txt)__ 
 This file contains the following statistics:
 * Number of reads of insert
 * Number of five prime reads
@@ -152,12 +152,6 @@ This file contains the following statistics:
 * Number of full-length reads
 * Number of full-length non-chimeric reads
 * Average full-length non-chimeric read length
-
-__Primers File ()__
-todo (yli)
-
-__Primers Report__
-todo (yli)
 
 ##Cluster Files
 
@@ -189,7 +183,7 @@ todo (yli)
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
 | Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt) |
 | Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
-| Primers Report | --report PRIMERREPORTFN  | CSV file to output primer info (default: out.primer_info.csv) |
+| Primers Report | --report PRIMERREPORTFN  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv) |
 | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
 
 
