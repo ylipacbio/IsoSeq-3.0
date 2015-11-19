@@ -14,6 +14,7 @@ Table of contents
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
+    * [PBSMRTPipe IsoSeq](#pbsmrtpipe-isoseq-options)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
