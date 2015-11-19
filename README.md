@@ -262,6 +262,11 @@ todo (yli)
 
 
 ## Algorithms
+
+__CCS__
+
+See https://github.com/PacificBiosciences/pbccs/blob/master/README.md
+
 __Classify__
 
 todo (yli)
@@ -280,7 +285,7 @@ todo (yli)
 
 __Quiver__
 
-todo (yli)
+maybe explain briefly how Quiver is used in isoseq, a more general explanation of Quiver can exist elsewhere (yli)
 
 ## Glossary
 * __Chimera__
