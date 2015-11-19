@@ -8,8 +8,8 @@ Table of contents
   * [Command-Line Overview](#command-line-overview)
   * [Manual](#manual)
     * [Running with SMRTLink](#running-with-smrtlink)
+    * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
-    * [Running on the Command-Line without PBSMRTPipe](#running-on-the-command-line-without-pbsmrtpipe)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
@@ -39,9 +39,7 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on 
 
 ##Running with SMRTLink
 
-##Running on the Command-Line with PBSMRTPipe
-
-##Running on the Command-Line without PBSMRTPipe
+##Running on the Command-Line
 
 Without PBSMRTPipe, the analysis is performed in 3 steps:
 
@@ -83,6 +81,23 @@ Once Cluster has run, you can further subset your results using Subset. Subset c
     pbtranscript subset [OPTIONS] isoseq_draft.fasta isoseq_subset.fasta
 
 Where isoseq_draft.fasta is the input FASTA and isoseq_subset.fasta is the output FASTA. 
+
+##Running on the Command-Line with PBSMRTPipe
+
+For the user who would like a simplified experience, pbsmrtpipe offers a way to run isoseq with a single command. The caveat to this approach is that only a few options are available to the user. 
+run isoseq with pbsmrtpipe, first load the smrtpipe module.
+
+```
+ module load smrtanalysis/3.0.1-current
+```
+
+Now create a global options xml file and an isoseq options xml file.
+
+```
+ pbsmrtpipe show-workflow-options -o global_options.xml
+ pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
+```
+
 
 
 ## Files
