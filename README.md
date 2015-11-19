@@ -123,8 +123,7 @@ __Output FASTA__
 Reads from Classify look like this:
 
 ```
-     m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
-     
+m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
  ```
 These lines have the format: 
 ```
@@ -133,8 +132,8 @@ These lines have the format:
 The info fields are:
 * strand: either + or -,  whether a read is forward or reverse-complement cdna,
 * fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
-* polyAseen: whether or not poly A tail is seen
-* threeseen: whether or not 3' prime is seen
+* polyAseen: whether or not poly A tail is seen, 1 yes, 0 no
+* threeseen: whether or not 3' prime is seen, 1 yes, 0 no
 * fiveend: start position of 5'
 * threeend: start position of 3' in read
 * polyAend: start position of polyA in read
@@ -153,7 +152,7 @@ This file contains the following statistics:
 * Number of full-length non-chimeric reads
 * Average full-length non-chimeric read length
 
-__Primers File__
+__Primers File ()__
 todo (yli)
 
 __Primers Report__
@@ -187,9 +186,9 @@ todo (yli)
 |           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
-| Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: classify_summary.txt) |
+| Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt) |
 | Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
-| Primers Report | --report PRIMERREPORTFN  | CSV file to output primer info (default: .primer_info.csv) |
+| Primers Report | --report PRIMERREPORTFN  | CSV file to output primer info (default: out.primer_info.csv) |
 | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
 
 
