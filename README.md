@@ -214,7 +214,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 
 ## Files
 ## Classify Files
-__Output FASTA__
+__Output FASTA (out.fasta)__
 Reads from Classify look like this:
 
 ```
