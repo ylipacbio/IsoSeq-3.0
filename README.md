@@ -90,8 +90,12 @@ run isoseq with pbsmrtpipe, first load the smrtpipe module.
 ```
  module load smrtanalysis/3.0.1-current
 ```
+Now create an xml file from your subreads.
 
-Now create a global options xml file and an isoseq options xml file.
+```
+dataset create --type SubreadSet subreads subreads.bam
+```
+This will create a file called subreads.xml. Now create a global options xml file and an isoseq options xml file.
 
 ```
  pbsmrtpipe show-workflow-options -o global_options.xml
