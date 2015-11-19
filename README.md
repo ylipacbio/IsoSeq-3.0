@@ -5,7 +5,7 @@ The isoform sequencing (IsoSeq) application generates full-length cDNA sequences
 Table of contents
 =================
 
-  * [Command-Line Overview](#command-line-overview)
+  * [Overview](#overview)
   * [Manual](#manual)
     * [Running with SMRTLink](#running-with-smrtlink)
     * [Running on the Command-Line](#running-on-the-command-line)
@@ -13,7 +13,7 @@ Table of contents
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
-  * [Command Options](#command-line-options)
+  * [Options](#command-line-options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
@@ -22,7 +22,7 @@ Table of contents
 
 
 
-## Command-Line Overview
+## Overview
 ## Classify, Cluster, Subset
 Analyses are performed using three tools
 * __Classify__
@@ -169,7 +169,7 @@ todo (yli)
 __Report__
 todo (yli)
 
-## Command-Line Options
+## Options
 ## Classify Options
 
 |           Positional Arguments           |     Example      |  Explanation      |
