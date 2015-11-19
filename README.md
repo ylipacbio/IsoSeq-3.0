@@ -248,10 +248,7 @@ This file contains the following statistics:
 * Number of full-length non-chimeric reads
 * Average full-length non-chimeric read length
 
-##Cluster Files
-
-__Output Isoforms__
-todo (yli)
+##Cluster Files (yli)
 
 __Summary__
 This file contains the following statistics:
@@ -282,7 +279,7 @@ todo (yli)
 
 __HMMER__
 
-HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).
+HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs). (yli)
 
 __ICE__
 
@@ -292,14 +289,12 @@ __Quiver__
 
 maybe explain briefly how Quiver is used in isoseq, a more general explanation of Quiver can exist elsewhere (yli)
 
-## Glossary
+## Glossary (yli)
 * __Chimera__
-  * todo (yli)
+  * todo 
 * __Concatemer__
-  * todo (yli)
+  * todo 
 * __High QV__
-  * todo (yli)
+  * todo 
 * __Low QV__
-  * todo (yli)
-* __Anything else?__
-  * todo (yli)
+  * todo 
