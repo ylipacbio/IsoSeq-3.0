@@ -114,7 +114,7 @@ And you can modify them using your favorite text editor, such as vim.
 Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
 
 ```
-pbsmrtpipe.pipelines.sa3_ds_isoseq --debug -e eid_subread:/full/path/to/subreadset.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
+pbsmrtpipe.pipelines.sa3_ds_isoseq --debug -e eid_subread:/full/path/to/subreads.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
 ```
 
 ## Files
