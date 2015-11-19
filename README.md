@@ -292,3 +292,9 @@ maybe explain briefly how Quiver is used in isoseq, a more general explanation o
   * todo (yli)
 * __Concatemer__
   * todo (yli)
+* __High QV__
+  * todo (yli)
+* __Low QV__
+  * todo (yli)
+* __Anything else?__
+  * todo (yli)
