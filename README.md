@@ -13,7 +13,6 @@ Table of contents
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
-  * [Optional Files](#remote-files)
   * [Command Options](#command-line-options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
@@ -169,8 +168,6 @@ todo (yli)
 
 __Report__
 todo (yli)
-
-## Optional Files
 
 ## Command-Line Options
 ## Classify Options
