@@ -73,13 +73,13 @@ __Step 3. Cluster__
 
 Cluster can be run at the command line as follows:
 
-     pbtranscript cluster [OPTIONS] flnc_fa consensusFa
+     pbtranscript cluster [OPTIONS] classified.fasta clustered.fasta
 
 __Optional Step__
 
 Once Cluster has run, you can further subset your results using Subset. Subset can be run with the command:
 
-    pbtranscript subset [OPTIONS] isoseq_draft.fasta isoseq_subset.fasta
+    pbtranscript subset [OPTIONS] clustered.fasta subset.fasta
 
 Where isoseq_draft.fasta is the input FASTA and isoseq_subset.fasta is the output FASTA. 
 
@@ -124,7 +124,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | readsFN  | ccs.bam  | This is the second-to-last argument and it names the file containing the input sequence data in BAM or FASTA format |
-| outReadsFN | out.fasta | This is the last argument and it names the file containing the input sequence data in BAM or FASTA format |
+| outReadsFN | out.fasta | This is the last argument and it names the file containing the output sequence data in BAM or FASTA format |
 
 |           Optional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
