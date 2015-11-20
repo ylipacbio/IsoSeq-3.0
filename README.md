@@ -124,7 +124,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 ## Options
 ## SMRTLink Options
 
-|           Arguments           |     Example      |  Explanation      |
+|           Arguments           |     Default      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
 | Minimum length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
