@@ -124,7 +124,9 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 ## Options
 ## SMRTLink Options
 
-|           Arguments           |     Default      |  Explanation      |
+SMRTLink offers a subset of the parameters available through the command-line tools. These parameters are detailed below. 
+
+|           Parameter           |     Default      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
 | Minimum length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
@@ -234,7 +236,10 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
 ## PBSMRTPipe IsoSeq Options
-|           Arguments           | PBSMRTPipe Name |      Explanation      |
+
+PBSMRTPipe offers a subset of the parameters available through the command-line tools. These parameters are detailed below.
+
+|           Parameter           | PBSMRTPipe Name |      Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Minimum read score  | pbccs.task_options.min_read_score | Minimum read score of input subreads |
 | Max. dropped fraction | pbccs.task_options.max_drop_fraction | Maximum fraction of subreads that can be dropped before giving up |
