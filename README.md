@@ -81,7 +81,7 @@ Once Cluster has run, you can further subset your results using Subset. Subset c
 
     pbtranscript subset [OPTIONS] clustered.fasta subset.fasta
 
-If you are interested only in full-length, non-chimeric reads, you can also provide flnc.fasta to cluster instead of classified.fasta. FLNC_FA.fasta contains only the full-length, non-chimeric reads produced from classify.
+If you are interested only in full-length, non-chimeric reads, you can also provide flnc.fasta to cluster instead of classified.fasta. flnc.fasta contains only the full-length, non-chimeric reads produced from classify.
 
 ##Running on the Command-Line with PBSMRTPipe
 
