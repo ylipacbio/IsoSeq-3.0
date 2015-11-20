@@ -127,12 +127,12 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 |           Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
-| Minimum length | 300 | Minimum length of subreads to use for generating CCS |
-| Minimum passes | 1 | Minimum number of subreads required to generate CCS |
-| Min. predicted accuracy | 0.8 | Minimum predicted accuracy in [0, 1] |
+| Minimum length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
+| Minimum passes | 1 | Sets a minimum number of passes for a ZMW to be emitted. This is the number of full passes. Full passes must have an adapter hit before and after the insert sequence and so does not include any partial passes at the start and end of the sequencing reaction. Additionally, the full pass count does not include any reads that were dropped by the Z-Filter. |
+| Min. predicted accuracy | 0.8 | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
 | Minimum read score | 0.75 | Minimum read score of input subreads |
-| Minimum SNR | 3.75 | Minimum SNR of input subreads |
-| Min. Z-score | -9999 | Minimum z-score to use a subread |
+| Minimum SNR | 3.75 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell stochastochastically lands when loading occurs. SMRTbells that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
+| Min. Z-score | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
 | Min. quiver accuracy | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
 | Ignore poly-A | FALSE | FL does not require polyA tail (default: turned off) |
 | Min. seq. length | 300 | Minimum sequence length to output (default: 300) |
