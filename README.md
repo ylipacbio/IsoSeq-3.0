@@ -236,9 +236,9 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 ## PBSMRTPipe IsoSeq Options
 |           Arguments           | PBSMRTPipe Name |      Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-|   | pbccs.task_options.min_read_score | ? |
-|  | pbccs.task_options.max_drop_fraction | ? |
-|  | pbtranscript.task_options.hq_quiver_min_accuracy | ? |
+| Minimum read score  | pbccs.task_options.min_read_score | Minimum read score of input subreads |
+| Max. dropped fraction | pbccs.task_options.max_drop_fraction | Maximum fraction of subreads that can be dropped before giving up |
+| Min. quiver accuracy | pbtranscript.task_options.hq_quiver_min_accuracy | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
 | Minimum Sequence Length | pbtranscript.task_options.min_seq_len | Minimum sequence length to output |
 | Trim QVs 3' | pbtranscript.task_options.qv_trim_3p | Ignore QV of n bases in the 3' end. |
 | Ignore polyA Tails | pbtranscript.task_options.ignore_polya | FL does not require polyA tail |
