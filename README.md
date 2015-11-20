@@ -11,6 +11,7 @@ Table of contents
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Options](#options)
+    * [SMRTLink](#smrtlink-options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
@@ -118,6 +119,23 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 ```
 
 ## Options
+## SMRTLink Options
+
+|           Arguments           |     Example      |  Explanation      |
+| -------------------------- | --------------------------- | ----------------- |
+| Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
+| Minimum length | 300 | Minimum length of subreads to use for generating CCS |
+| Minimum passes | 1 | Minimum number of subreads required to generate CCS |
+| Min. predicted accuracy | 0.8 | Minimum predicted accuracy in [0, 1] |
+| Minimum read score | 0.75 | Minimum read score of input subreads |
+| Minimum SNR | 4 | Minimum SNR of input subreads |
+| Min. Z-score | -9999 | Minimum z-score to use a subread |
+| Min. quiver accuracy | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
+| Ignore poly-A | FALSE | FL does not require polyA tail (default: turned off) |
+| Min. seq. length | 300 | Minimum sequence length to output (default: 300) |
+| Trim 3' | 30 | Ignore QV of n bases in the 3' end. |
+| Trim 5' | 100 | Ignore QV of n bases in the 5' end. |
+
 ## Classify Options
 
 |           Positional Arguments           |     Example      |  Explanation      |
