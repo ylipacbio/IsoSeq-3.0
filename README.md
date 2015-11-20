@@ -40,7 +40,7 @@ Analyses are performed in three stages, CCS, Classify and Cluster. For analyses 
 
 ##Manual
 
-There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on the command-line using pbsmrtpipe so that you can run the whole IsoSeq job with one command given to pbsmrtpipe. 
+There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on the command-line using pbsmrtpipe so that you can run the whole IsoSeq analysis with one command given to pbsmrtpipe. 
 
 ##Running with SMRTLink
 
