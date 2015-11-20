@@ -128,7 +128,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subread
 | Minimum passes | 1 | Minimum number of subreads required to generate CCS |
 | Min. predicted accuracy | 0.8 | Minimum predicted accuracy in [0, 1] |
 | Minimum read score | 0.75 | Minimum read score of input subreads |
-| Minimum SNR | 4 | Minimum SNR of input subreads |
+| Minimum SNR | 3.75 | Minimum SNR of input subreads |
 | Min. Z-score | -9999 | Minimum z-score to use a subread |
 | Min. quiver accuracy | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
 | Ignore poly-A | FALSE | FL does not require polyA tail (default: turned off) |
