@@ -85,8 +85,7 @@ If you are interested only in full-length, non-chimeric reads, you can also prov
 
 ##Running on the Command-Line with PBSMRTPipe
 
-For the user who would like a simplified experience, pbsmrtpipe offers a way to run isoseq with a single command. The caveat to this approach is that only a few options are available to the user. 
-run isoseq with pbsmrtpipe, first load the smrtpipe module.
+For the user who would like a simplified experience, pbsmrtpipe offers a way to run isoseq with a single command. The caveat to this approach is that only a few options are available to the user. To run isoseq with pbsmrtpipe, first load the smrtpipe module.
 
 ```
  module load smrtanalysis/3.0.1-current
