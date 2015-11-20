@@ -25,6 +25,9 @@ Table of contents
 
 
 ## Overview
+
+![alt tag](https://cloud.githubusercontent.com/assets/12494820/11311086/777dd88e-8f82-11e5-841e-0f0b2db81e05.png)
+
 Analyses are performed in three stages, CCS, Classify and Cluster. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
 * __CCS__
   * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
