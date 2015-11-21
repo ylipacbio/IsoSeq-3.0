@@ -292,13 +292,13 @@ This file contains the following statistics:
 
 ##Cluster Files (yli)
 
-__Summary__
+__Summary (cluster_summary.txt)__
 This file contains the following statistics:
 * Number of consensus isoforms
 * Average consensus isoforms read length
 
 
-__Report__
+__Report (cluster_report.csv)__
 This is a csv file containing the following fields:
 * cluster_id
 * read_id
