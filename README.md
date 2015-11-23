@@ -56,7 +56,7 @@ __Step 1. CCS__
 
 First convert your subreads to circular consensus sequences. You can do this with the command:
 
-     ccs ccs.bam subreads.bam
+     ccs --minLength=300 --minPasses=1 --minZScore=-999 --maxDropFraction=0.8 --minPredictedAccuracy=0.8 --minSnr=4 ccs.bam subreads.bam
 
 Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. 
 Next, you will generate an XML file from your CCSs. You can do this with the commmand:
