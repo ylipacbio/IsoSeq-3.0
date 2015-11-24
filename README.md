@@ -19,8 +19,8 @@ Table of contents
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
   * [Procedures](#procedures)
-  * [Diff SMRTAnalysis v3.0 vs v2.3](#smrtanalysis-v30-vs-v23)
-  * [Handling RS and RS II data](#handling-rs-and-rsii-data)
+  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v3.0-vs-v2.3)
+  * [Handling RS and RS II data](#handling-rs-and-rs-ii-data)
   * [Glossary](#glossary)
 
 
