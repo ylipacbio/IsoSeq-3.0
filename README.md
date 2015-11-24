@@ -1,6 +1,6 @@
-# IsoSeq-3.0 : Generating full-length cDNA sequences for transcriptomics
+# IsoSeq: PacBio Isoform Sequencing.
 
-The isoform sequencing (IsoSeq) application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
+The Isoform Sequencing (IsoSeq) application refers to [PacBio’s proprietary methods and applications for transcriptome sequencing](http://www.pacb.com/applications/rna-sequencing/). The IsoSeq application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
 
 Table of contents
 =================
@@ -15,13 +15,13 @@ Table of contents
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
     * [pbsmrtpipe](#pbsmrtpipe-isoseq-options)
-  * [Output Files](#files)
-    * [Classify Output Files](#classify-files)
-    * [Cluster Output Files](#cluster-files)
-  * [Modules](#modules)
-  * [Diff SMRTLink v1.0 vs SMRTPortal v2.3](#diff-smrtlink-vs-smrtportal)
+  * [Output Files](#output-files)
+    * [Classify Output Files](#classify-output-files)
+    * [Cluster Output Files](#cluster-output-files)
+  * [Procedures](#procedures)
+  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
+  * [Handling RS and RS-II data](#handling-rs-and-rsii-data)
   * [Glossary](#glossary)
-
 
 
 ## Overview
@@ -103,7 +103,7 @@ Optionally, you may call the following command to run ICE and create unpolished 
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
 if `smrtanalysis-3.0` has been installed on your system. Or you can (download 
 pbsmrtpipe)[https://github.com/PacificBiosciences/pbsmrtpipe] and 
-(install)[http://pbsmrtpipe.readthedocs.org/en/master/] it as separately.
+(install)[http://pbsmrtpipe.readthedocs.org/en/master/] it separately.
     
 You can verify that pbsmrtpipe is running OK by:
 
@@ -295,8 +295,8 @@ pbsmrtpipe offers a subset of the parameters available through the command-line 
 | Minimum Z Score | pbccs.task_options.min_zscore | The minimum Z-Score for a subread to be included in the consensus generating process. |
 | Minimum Predicted Accuracy | pbccs.task_options.min_predicted_accuracy | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
 
-## Files
-## Classify Files
+## Output Files
+## Classify Output Files
 __Classify FASTA Output (isoseq_*.fasta)__
 
 `isoseq_flnc.fasta` contains all full-length, non-artificial-concatemer reads.
@@ -344,7 +344,7 @@ This file contains the following statistics:
 a little less than the number of full-length reads, we can confirm that the number of
 artificial concatemers is very low. This indicates a successful SMRTbell library prep.
 
-##Cluster Files
+##Cluster Output Files
 
 __Summary (cluster_summary.txt)__
 This file contains the following statistics:
@@ -359,7 +359,7 @@ This is a csv file each line of which contains the following fields:
 * read_type : Type of the supportive read
 
 
-## Modules
+## Procedures 
 
 __CCS__
 
@@ -415,9 +415,9 @@ ICE is customized to work well on alternative isoforms and alternative
 polyadenlynation sites, but not on SNP analysis and SNP based highly complex 
 gene families.
 
-For a detailed explanation of ICE, please refer to the (Iso-Seq webinar recording and slides)[https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq].
+For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recording and slides](https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq).
 
-    + __pbdagcon__: (`pdagcon`)[https://github.com/PacificBiosciences/pbdagcon] is a
+    + __pbdagcon__: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
                     tool which builds consensus sequences using Directed Acyclic Graph
                     Consensus.
 
@@ -429,7 +429,7 @@ reads into clusters based on similarity. Then for each cluster, we align raw sub
 of its assigned zmws towards its consensus sequence. Finally, we load quality values
 to these alignments and polish the consensus sequence using `Quiver`.
     
-    + __Quiver__: (`Quiver`)[https://github.com/PacificBiosciences/GenomicConsensus] 
+    + __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
                   is a consensus and variant calling algorithm for PacBio reads.
                   `Quiver` finds the maximum likelihood template sequence given
                   PacBio reads of the template. It is used by IsoSeq to polish 
@@ -437,8 +437,42 @@ to these alignments and polish the consensus sequence using `Quiver`.
                   higher-quality consensus sequence comapred with `pbdagcon`, but is
                   more time-consuming.
 
-## Diff SMRTLink v1.0 vs SMRTPortal v2.3
-TODO
+
+## Diff SMRTAnalysis v3.0 vs SMRTAnalysis v2.3
+PacBio will change the output of its Sequel instruments to 
+[BAM](http://pacbiofileformats.readthedocs.org/en/3.0/BAM.html) format oppose to
+bax.h5 of its RS and RS-II instruments. Major differences between IsoSeq in 
+SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
+*Note*: Functions of IsoSeq have NOT been changed since v2.3, and IsoSeq-Tofu has NOT been integrated.
+
+| IsoSeq in SMRTAnalysis v1.0 | IsoSeq in SMRTAnalysis v2.3  |
+| --------------------------- | ---------------------------- |
+| SMRTAnalysis Web Server: SMRTLink | SMRTAnalysis Web Server: SMRTPortal |
+| Works on data from Sequel | Works on data from RS and RS II |
+| Input PacBio reads are stored in BAM | Input PacBio reads are stored in bax.h5 format |
+| Supports PacBio [DataSet](http://pbsmrtpipe.readthedocs.org/en/master/getting_started.html#appendix-b-working-with-datasets) | Does *NOT* support PacBio Dataset |
+| Uses new algorithm `pbccs` to create ccs reads | Uses `ConsensusTools.sh` to create ccs reads |
+| Does *NOT* support using customer primers from SMRTLink | Supports using customer primers from SMRTPortal |
+| Does *NOT* support using `GMAP` to align consensus isoforms to reference from SMRTLink | Supports using `GMAP` to align consensus isoforms to reference from SMRTPortal |
+| SMRTLink has two protocols: IsoSeq Classify Only and IsoSeq. The IsoSeq Classify Only protocol only classifies reads, while the IsoSeq protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using `Quiver`. | SMRTPortal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using `Quiver`. |
+
+
+##Handling RS and RS-II data
+If you want to run IsoSeq on existing RS or RS-II data, you will need to convert 
+reads in bax.h5 files to BAM files.
+
+__Converting RS and RS-II data to BAM with SMRTLink__
+TODO: points to SMRTLink Doc.
+
+__Converting RS and RS-II data to BAM from command line__
+
+```
+  ls path_to_your_input/movie.bax.h5
+  bam2bax path_to_your_input/movie.bax.h5 -o path_to_your_output/movie --subreads
+  # Then path_to_your_output/movie.subreads.bam and path_to_your_output/movie.scraps.bam will be generated.
+  ls path_to_your_output/movie.subreads.bam path_to_your_output/movie.scraps.bam
+
+```
 
 ## Glossary
 * __Chimera__
