@@ -73,13 +73,13 @@ __Step 2. Classify__
 Classify can be run at the command line as follows:
 
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
-     pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset --nfl=isoseq_nfl.contigset
+     pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset
 
 Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta.
 
-Where isoseq_flnc.fasta or isoseq_flnc.contigset contains only the full-length, non-chimeric reads.
+Where isoseq_flnc.fasta or isoseq_flnc.contigset.xml contains only the full-length, non-chimeric reads.
 
-Where isoseq_nfl.fasta or isoseq_flnc.contigset contains all non-full-length reads.
+Where isoseq_nfl.fasta or isoseq_nfl.contigset.xml contains all non-full-length reads.
 
 **Note**, One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified `pbtranscript classify`. For example,
 
@@ -90,9 +90,9 @@ __Step 3. Cluster and Polish__
 Cluster can be run at the command line as follows:
 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --bas_fofn=my.subreadset.xml
-     pbtranscript cluster [OPTIONS] isoseq_flnc.contigset polished_clustered.contigset --quiver --nfl=isoseq_nfl.contigset --bas_fofn=my.subreadset.xml
+     pbtranscript cluster [OPTIONS] isoseq_flnc.contigset.xml polished_clustered.contigset.xml --quiver --nfl=isoseq_nfl.contigset.xml --bas_fofn=my.subreadset.xml
 
-**Note** that `--quiver --nfl=isoseq_nfl.fasta|contigset` must be specified in order to get `Quiver` polished consensus isoforms.
+**Note** that `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get `Quiver` polished consensus isoforms.
 
 Optionally, you may call the following command to run ICE and create unpolished consensus isoforms only.
 
