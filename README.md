@@ -11,7 +11,7 @@ Table of contents
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Options](#options)
-    * [SMRTAnalysis](#smrtanalysis-options)
+    * [SMRTAnalysis](#smrtanalysis-advanced-analysis-parameters-for-the-isoseq-protocol-and-the-isoseq-classify-only-protocol)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
