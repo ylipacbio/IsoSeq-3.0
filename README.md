@@ -19,7 +19,8 @@ Table of contents
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
-  * [Algorithms](#algorithms)
+  * [Modules](#modules)
+  * [Diff SMRTLink v1.0 vs SMRTPortal v2.3](#diff-smrtlink-vs-smrtportal)
   * [Glossary](#glossary)
 
 
@@ -88,8 +89,8 @@ __Step 3. Cluster and Polish__
 
 Cluster can be run at the command line as follows:
 
-     pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --ccs_fofn=ccs.xml
-     pbtranscript cluster [OPTIONS] isoseq_flnc.contigset polished_clustered.contigset --quiver --nfl=isoseq_nfl.contigset --ccs_fofn=ccs.xml
+     pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --bas_fofn=my.subreadset.xml
+     pbtranscript cluster [OPTIONS] isoseq_flnc.contigset polished_clustered.contigset --quiver --nfl=isoseq_nfl.contigset --bas_fofn=my.subreadset.xml
 
 **Note** that `--quiver --nfl=isoseq_nfl.fasta|contigset` must be specified in order to get `Quiver` polished consensus isoforms.
 
@@ -99,25 +100,40 @@ Optionally, you may call the following command to run ICE and create unpolished 
 
 
 ##Running on the Command-Line with pbsmrtpipe
+###Install pbsmrtpipe
+pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
+if `smrtanalysis-3.0` has been installed on your system. Or you can (download 
+pbsmrtpipe)[https://github.com/PacificBiosciences/pbsmrtpipe] and 
+(install)[http://pbsmrtpipe.readthedocs.org/en/master/] it as separately.
+    
+You can verify that pbsmrtpipe is running OK by:
 
-For the user who would like a simplified experience, pbsmrtpipe offers a way to run isoseq with a single command. The caveat to this approach is that only a few options are available to the user. To run isoseq with pbsmrtpipe, first load the smrtpipe module.
+    pbsmrtpipe --help
 
-```
- module load smrtanalysis/3.0.1-current
-```
+### Create a dataset
 Now create an xml file from your subreads.
 
 ```
-dataset create --type SubreadSet subreads subreads.bam
+dataset create --type SubreadSet my.subreadset.xml subreads1.bam subreads2.bam ...
 ```
-This will create a file called subreads.xml. Now create a global options xml file and an isoseq options xml file.
+This will create a file called my.subreadset.xml. 
+
+
+### Create and edit isoseq options and global options for pbsmrtpipe
+Create a global options xml file which contains SGE related, job chunking and
+job distribution options that you may modify by:
 
 ```
  pbsmrtpipe show-workflow-options -o global_options.xml
+```
+
+Create an isoseq options xml file which contains isoseq related options that 
+you may modify by:
+```
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
 ```
 
-The options you may modify are now contained in the files global_options.xml and isoseq_options.xml. An entry in these files looks like this:
+An entry of `isoseq_options.xml` looks like this:
 
 ```
  <option id="pbtranscript.task_options.min_seq_len">
@@ -125,45 +141,57 @@ The options you may modify are now contained in the files global_options.xml and
         </option>
 ```
 
-And you can modify them using your favorite text editor, such as vim.
+**Note** If you only want to run IsoSeq Classify without Cluster, please 
+create a xml for IsoSeq Classify Only.
+
+```
+ pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq_classify -o isoseq_classify_options.xml
+```
+
+And you can modify options using your favorite text editor, such as vim.
+
+### Run IsoSeq from pbsmrtpipe
 Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
 
 ```
-pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:subreads.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
+pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subreadset.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
 ```
 
 ## Options
-## SMRTLink Options
+## SMRTLink Advanced Analysis Parameters for the IsoSeq protocol and the IsoSeq Classify Only protocol
 
-SMRTLink offers a subset of the parameters available through the command-line tools. These parameters are detailed below. 
+You may modify advanced analysis parameters for IsoSeq as described below via SMRTLink.
 
-|           Parameter           |     Default      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
-| Minimum length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
-| Minimum Number of Passes | 1 | Sets a minimum number of passes for a ZMW to be emitted. This is the number of full passes. Full passes must have an adapter hit before and after the insert sequence and so does not include any partial passes at the start and end of the sequencing reaction. Additionally, the full pass count does not include any reads that were dropped by the Z-Filter. |
-| Minimum Predicted Accuracy | 0.8 | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
-| Minimum read score | 0.75 | Minimum read score of input subreads |
-| Minimum SNR | 3.75 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell stochastically lands when loading occurs. SMRTbells that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
-| Minimum Z Score | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
-| Minimum Quiver Accuracy | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
-| Ignore polyA | FALSE | FL does not require polyA tail (default: turned off) |
-| Min. seq. length | 300 | Minimum sequence length to output (default: 300) |
-| Trim QVs 3' | 30 | Ignore QV of n bases in the 3' end. |
-| Trim QVs 5' | 100 | Ignore QV of n bases in the 5' end. |
+| Module |           Parameter           |     Default      |  Explanation      |
+| ------ | -------------------------- | --------------------------- | ----------------- |
+| CCS | Max. dropped fraction  | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
+| CCS | Minimum length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
+| CCS | Minimum Number of Passes | 1 | Sets a minimum number of passes for a ZMW to be emitted. This is the number of full passes. Full passes must have an adapter hit before and after the insert sequence and so does not include any partial passes at the start and end of the sequencing reaction. Additionally, the full pass count does not include any reads that were dropped by the Z-Filter. |
+| CCS | Minimum Predicted Accuracy | 0.8 | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
+| CCS | Minimum read score | 0.75 | Minimum read score of input subreads |
+| CCS | Minimum SNR | 4 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell stochastically lands when loading occurs. SMRTbells that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
+| CCS | Minimum Z Score | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
+| Classify | Ignore polyA | FALSE | FL does not require polyA tail (default: turned off) |
+| Classify | Min. seq. length | 300 | Minimum sequence length to output (default: 300) |
+| Cluster | Minimum Quiver Accuracy | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
+| Cluster-Polish | Trim QVs 3' | 30 | Ignore QV of n bases in the 3' end. |
+| Cluster-Polish | Trim QVs 5' | 100 | Ignore QV of n bases in the 5' end. |
 
-## Classify Options
+**Note** that the IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
+
+
+## Classify Advanced Options via command line `pbtranscript classify`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| readsFN  | ccs.bam  | This is the second-to-last argument and it names the file containing the input sequence data in BAM or FASTA format |
-| outReadsFN | out.fasta | This is the last argument and it names the file containing the output sequence data in BAM or FASTA format |
+| readsFN  | ccs.bam|xml|fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
+| outReadsFN | isoseq_draft.fasta|contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
 
 |           Optional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Help  | -h, --help | This prints the help message |
-| Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta | Outputs full-length non-chimeric reads in fasta |
-| Output Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta |
+| Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta|contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset xml format|
+| Output Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta or contigset xml format |
 
 |           HMMER Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -186,19 +214,19 @@ SMRTLink offers a subset of the parameters available through the command-line to
 | Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-## Cluster Options
+## Cluster Advanced Options via command line.
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
-| Input Reads  | isoseq_flnc.fasta  | Input full-length non-chimeric reads in fasta format, used for clustering consensus isoforms |
-| Output Isoforms | out.fasta | Output predicted (unpolished) consensus isoforms in fasta file. |
+| Input Reads  | isoseq_flnc.fasta|contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
+| Output Isoforms | out.fasta|congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
 
 |           Optional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Help  | -h, --help | This prints the help message |
 | Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
-| CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A FOFN of ccs.h5 or ccs.bam (e.g., ccs.fofn), which contain quality values of consensus (CCS) reads. If not given, assume there is no QV information available. |
-| Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5 or bam files (e.g., input.fofn), which contain quality values of raw reads and subreads |
+| CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A ccs.fofn or ccs.bam or ccs.xml file. If not given, assume there is no QV information available. |
+| Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads |
 | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
 | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
 | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
