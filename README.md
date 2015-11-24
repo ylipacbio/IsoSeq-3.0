@@ -2,6 +2,8 @@
 
 The Isoform Sequencing (IsoSeq) application refers to [PacBio’s proprietary methods and applications for transcriptome sequencing](http://www.pacb.com/applications/rna-sequencing/). The IsoSeq application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
 
+This document describes the IsoSeq application in SMRTAnalysis v3.0 release, which includes SMRTLink v1.0. Previous IsoSeq documents can be found in its [github wiki](https://github.com/PacificBiosciences/cDNA_primer/wiki).
+
 Table of contents
 =================
 
@@ -19,7 +21,7 @@ Table of contents
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
   * [Procedures](#procedures)
-  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v3.0-vs-v2.3)
+  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
   * [Handling RS and RS II data](#handling-rs-and-rs-ii-data)
   * [Glossary](#glossary)
 
