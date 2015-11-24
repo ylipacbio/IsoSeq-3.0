@@ -9,13 +9,13 @@ Table of contents
   * [Manual](#manual)
     * [Running with SMRTLink](#running-with-smrtlink)
     * [Running on the Command-Line](#running-on-the-command-line)
-    * [Running on the Command-Line with PBSMRTPipe](#running-on-the-command-line-with-pbsmrtpipe)
+    * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Options](#options)
     * [SMRTLink](#smrtlink-options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
-    * [PBSMRTPipe](#pbsmrtpipe-isoseq-options)
+    * [pbsmrtpipe](#pbsmrtpipe-isoseq-options)
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
@@ -46,7 +46,7 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on 
 
 ##Running on the Command-Line
 
-Without PBSMRTPipe, the analysis is performed in 3 steps:
+Without pbsmrtpipe, the analysis is performed in 3 steps:
 
 1. Run CCS on your subreads, generating a CCS BAM file. Then generate an XML from the BAM file.
 2. Run Classify on your CCSs with the XML as input, generating a FASTA of annotated sequences.
@@ -57,6 +57,8 @@ __Step 1. CCS__
 First convert your subreads to circular consensus sequences. You can do this with the command:
 
      ccs --minLength=300 --minPasses=1 --minZScore=-999 --maxDropFraction=0.8 --minPredictedAccuracy=0.8 --minSnr=4 ccs.bam subreads.bam
+
+Where ccs options are described in [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md).
 
 Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. 
 Next, you will generate an XML file from your CCSs. You can do this with the commmand:
@@ -87,7 +89,7 @@ Once Cluster has run, you can further subset your results using Subset. Subset c
 
 If you are interested only in full-length, non-chimeric reads, you can also provide flnc.fasta to cluster instead of classified.fasta. flnc.fasta contains only the full-length, non-chimeric reads produced from classify.
 
-##Running on the Command-Line with PBSMRTPipe
+##Running on the Command-Line with pbsmrtpipe
 
 For the user who would like a simplified experience, pbsmrtpipe offers a way to run isoseq with a single command. The caveat to this approach is that only a few options are available to the user. To run isoseq with pbsmrtpipe, first load the smrtpipe module.
 
@@ -191,8 +193,8 @@ SMRTLink offers a subset of the parameters available through the command-line to
 | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
 | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
 | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
-| Report  | --report REPORT_FN | NO DESCRIPTION (yli) |
-| Pickle???  | --pickle_fn PICKLE_FN | NO DESCRIPTION (yli) |
+| Report  | --report REPORT_FN | CSV file, each line contains a cluster, an associated read of the cluster and the read type |
+| Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
 
 |           ICE Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -235,11 +237,11 @@ SMRTLink offers a subset of the parameters available through the command-line to
 | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
 | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
-## PBSMRTPipe IsoSeq Options
+## pbsmrtpipe IsoSeq Options
 
-PBSMRTPipe offers a subset of the parameters available through the command-line tools. These parameters are detailed below.
+pbsmrtpipe offers a subset of the parameters available through the command-line tools. These parameters are detailed below.
 
-|           Parameter           | PBSMRTPipe Name |      Explanation      |
+|           Parameter           | pbsmrtpipe Name |      Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
 | Minimum read score  | pbccs.task_options.min_read_score | Minimum read score of input subreads |
 | Max. dropped fraction | pbccs.task_options.max_drop_fraction | Maximum fraction of subreads that can be dropped before giving up |
@@ -256,8 +258,15 @@ PBSMRTPipe offers a subset of the parameters available through the command-line 
 
 ## Files
 ## Classify Files
-__Output FASTA (out.fasta)__
-Reads from Classify look like this:
+__Classify FASTA Output (isoseq_*.fasta)__
+
+`isoseq_flnc.fasta` contains all full-length, non-artificial-concatemer reads.
+
+`isoseq_nfl.fasta` contains all non-full-length reads. 
+
+`isoseq_draft.fasta` is an intermediate file in order to get full-length reads, which you can ignore.
+
+Reads in these FASTA files look like the following:
 
 ```
 >m140121_100730_42141_c100626750070000001823119808061462_s1_p0/119/30_1067_CCS strand=+;fiveseen=1;polyAseen=1;threeseen=1;fiveend=30;polyAend=1067;threeend=1096;primer=1;chimera=0
@@ -278,7 +287,9 @@ The info fields are:
 * primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
-__Summary (out.classify_summary.txt)__ 
+**Note**: Reads in `isoseq-flnc.fasta`` are always **strand-specific**. That is, the 5' and 3' primer (and sometimes the polyA tail) are used to tell whether the read is in the right strand. If needed, the scripts described here reverse-complement the original read and produce the sequence that is supposed to be the transcript. Non-full-length reads in `isoseq_nfl.fasta` on the other hand, could be in either orientation.
+
+__Summary (classify_summary.txt)__ 
 This file contains the following statistics:
 * Number of reads of insert
 * Number of five prime reads
@@ -290,53 +301,112 @@ This file contains the following statistics:
 * Number of full-length non-chimeric reads
 * Average full-length non-chimeric read length
 
-##Cluster Files (yli)
+**Note**: By seeing that the number of full-length, non-chimeric (flnc) reads is only 
+a little less than the number of full-length reads, we can confirm that the number of
+artificial concatemers is very low. This indicates a successful SMRTbell library prep.
+
+##Cluster Files
 
 __Summary (cluster_summary.txt)__
 This file contains the following statistics:
 * Number of consensus isoforms
-* Average consensus isoforms read length
+* Average read length of consensus isoforms
 
 
 __Report (cluster_report.csv)__
-This is a csv file containing the following fields:
-* cluster_id
-* read_id
-* read_type
+This is a csv file each line of which contains the following fields:
+* cluster_id: ID of a consensus isoforms from ICE.
+* read_id   : ID of a read which supports the consensus isoform.
+* read_type : Type of the supportive read
 
 
-## Algorithms
+## Modules
 
 __CCS__
 
-See https://github.com/PacificBiosciences/pbccs/blob/master/README.md
+`pbccs` is a tool to create circular consensus sequences (ccs) sequence
+from raw subreads for PacBio sequences. See [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md) for usage.
+
 
 __Classify__
 
-todo (yli)
+Isoseq Classify classifies reads into full-length or non-full-length
+reads, artifical-concatemer chimeric or non-chimeric read.
+
+In order to classify a read as full-length or non-full-length, we search
+for primers and polyA within reads. If and only if both primers and polyAs 
+are seen in a read, we classify it as a full-length read. Otherwise, we
+classify this read as non-full-length. We also removes primers and polyAs
+from reads and identify reads strands based on these info.
+
+**Note**, the current version of IsoSeq in SMRTLink 1.0 by default recognizes
+Clontech SMRTer primers.
+
+**Note**, in SMRTLink 1.0, custom primers are __NOT__ supported. In order to
+use custom primers, You must call pbtranscript from command line like
+
+```pbtranscript classify --primer your_primer_fasta ...```
+
+Where your_primer_fasta is a FASTA file with the following format:
+
+```
+    >F0
+    5' sequence here
+    >R0
+    3' sequence here (but in reverse complement)
+```
+
+Next, we further look into full-length reads and classify them into 
+artificial-concatemer chimeric reads or non-chimeric reads by locating primer hits
+within reads.
+
+    + __HMMER__: We use `phmmer` in __HMMER__ package to detect locations of
+                 primer hits within reads and classify reads which have primer
+                 hits in the middle of sequences as artificial-concatemer chimeric.
+
 
 __Cluster__
 
-todo (yli)
+IsoSeq Cluster performs isoform level clustering using the Iterative Clustering
+and Error correction (ICE) algorithm, which iteratively classifies full-length
+non-chimeric ccs reads into clusters and builds consensus sequences of
+clusters using `pbdagcon`.
 
-__HMMER__
+ICE is customized to work well on alternative isoforms and alternative 
+polyadenlynation sites, but not on SNP analysis and SNP based highly complex 
+gene families.
 
-HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs). (yli)
+For a detailed explanation of ICE, please refer to the (Iso-Seq webinar recording and slides)[https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq].
 
-__ICE__
+    + __pbdagcon__: (`pdagcon`)[https://github.com/PacificBiosciences/pbdagcon] is a
+                    tool which builds consensus sequences using Directed Acyclic Graph
+                    Consensus.
 
-todo (yli)
+__Polish__
+IsoSeq Polish further polishes consensus sequenecs of clusters (i.e., `pbdagcon` output)
+taking into account 
+We assign not only full-length non-chimeric ccs reads but also non-full-length ccs 
+reads into clusters based on similarity. Then for each cluster, we align raw subreads
+of its assigned zmws towards its consensus sequence. Finally, we load quality values
+to these alignments and polish the consensus sequence using `Quiver`.
+    
+    + __Quiver__: (`Quiver`)[https://github.com/PacificBiosciences/GenomicConsensus] 
+                  is a consensus and variant calling algorithm for PacBio reads.
+                  `Quiver` finds the maximum likelihood template sequence given
+                  PacBio reads of the template. It is used by IsoSeq to polish 
+                  consensus isoforms. `Quiver` uses qulity values and creates 
+                  higher-quality consensus sequence comapred with `pbdagcon`, but is
+                  more time-consuming.
 
-__Quiver__
 
-maybe explain briefly how Quiver is used in isoseq, a more general explanation of Quiver can exist elsewhere (yli)
-
-## Glossary (yli)
+## Glossary
 * __Chimera__
-  * todo 
-* __Concatemer__
-  * todo 
-* __High QV__
-  * todo 
-* __Low QV__
-  * todo 
+  * IsoSeq Classify classifies reads as artificial-concatemer chimeric or non-chimeric
+    based on whether or not primers are found in the middle of the sequence.
+
+* __High QV | Low QV__
+  * Isoseq Cluster generates polished consensus isoforms are classified into either
+    high quality or low quality isoforms. We classify an isoform as high quality if 
+    its conseusus accuracy is no less than a cut-off, otherwise low quality.
+    The default cut-off is **0.99**. You may change this value from command line, or
+    via SMRTLink Advanced Analysis Parameters when creating an IsoSeq job.
