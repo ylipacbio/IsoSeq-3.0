@@ -417,7 +417,7 @@ gene families.
 
 For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recording and slides](https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq).
 
-    + __pbdagcon__: (pdagcon)[https://github.com/PacificBiosciences/pbdagcon] is a
+    + `pbdagcon`: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
                     tool which builds consensus sequences using Directed Acyclic Graph
                     Consensus.
 
