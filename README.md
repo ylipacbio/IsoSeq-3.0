@@ -10,15 +10,14 @@ Table of contents
     * [Running with SMRTLink](#running-with-smrtlink)
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
-  * [Options](#options)
-    * [SMRTLink](#smrtlink-options)
-    * [Classify](#classify-options)
-    * [Cluster](#cluster-options)
-    * [Subset](#subset-options)
+  * [Advanced Analysis Options](#options)
+    * [SMRTLink IsoSeq Options](#smrtlink-options)
+    * [Classify Options](#classify-options)
+    * [Cluster Options](#cluster-options)
     * [pbsmrtpipe](#pbsmrtpipe-isoseq-options)
-  * [Files](#files)
-    * [Classify](#classify-files)
-    * [Cluster](#cluster-files)
+  * [Output Files](#files)
+    * [Classify Output Files](#classify-files)
+    * [Cluster Output Files](#cluster-files)
   * [Modules](#modules)
   * [Diff SMRTLink v1.0 vs SMRTPortal v2.3](#diff-smrtlink-vs-smrtportal)
   * [Glossary](#glossary)
@@ -157,8 +156,8 @@ Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
 pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subreadset.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
 ```
 
-## Options
-## SMRTLink Advanced Analysis Parameters for the IsoSeq protocol and the IsoSeq Classify Only protocol
+## Advanced Analysis Options
+## SMRTLink Options for IsoSeq and IsoSeq Classify Only protocols
 
 You may modify advanced analysis parameters for IsoSeq as described below via SMRTLink.
 
@@ -180,7 +179,8 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 **Note** that the IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
 
 
-## Classify Advanced Options via command line `pbtranscript classify`.
+## Classify Advanced Options 
+In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -214,7 +214,8 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 | Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-## Cluster Advanced Options via command line.
+## Cluster Advanced Options
+In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -259,6 +260,7 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 
 
 ## Subset Options
+In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
@@ -435,6 +437,8 @@ to these alignments and polish the consensus sequence using `Quiver`.
                   higher-quality consensus sequence comapred with `pbdagcon`, but is
                   more time-consuming.
 
+## Diff SMRTLink v1.0 vs SMRTPortal v2.3
+TODO
 
 ## Glossary
 * __Chimera__
@@ -447,3 +451,5 @@ to these alignments and polish the consensus sequence using `Quiver`.
     its conseusus accuracy is no less than a cut-off, otherwise low quality.
     The default cut-off is **0.99**. You may change this value from command line, or
     via SMRTLink Advanced Analysis Parameters when creating an IsoSeq job.
+
+
