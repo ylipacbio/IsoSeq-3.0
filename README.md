@@ -19,7 +19,7 @@ Table of contents
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
   * [Procedures](#procedures)
-  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
+  * [Diff SMRTAnalysis v3.0 vs v2.3](#smrtanalysis-v30-vs-v23)
   * [Handling RS and RS-II data](#handling-rs-and-rsii-data)
   * [Glossary](#glossary)
 
@@ -437,7 +437,7 @@ to these alignments and polish the consensus sequence using `Quiver`.
                   more time-consuming.
 
 
-## Diff SMRTAnalysis v3.0 vs SMRTAnalysis v2.3
+## Diff SMRTAnalysis v3.0 vs v2.3
 PacBio will change the output of its Sequel instruments to 
 [BAM](http://pacbiofileformats.readthedocs.org/en/3.0/BAM.html) format oppose to
 bax.h5 of its RS and RS-II instruments. Major differences between IsoSeq in 
