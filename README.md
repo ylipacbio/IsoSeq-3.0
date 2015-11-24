@@ -19,7 +19,7 @@ Table of contents
   * [Files](#files)
     * [Classify](#classify-files)
     * [Cluster](#cluster-files)
-  * [Modules](#modules)
+  * [Algorithm Modules](#algorithm-modules)
   * [Diff SMRTLink v1.0 vs SMRTPortal v2.3](#diff-smrtlink-vs-smrtportal)
   * [Glossary](#glossary)
 
