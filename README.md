@@ -31,7 +31,7 @@ Table of contents
 
 ![isoseq expanded](https://cloud.githubusercontent.com/assets/12494820/11380910/c9775812-92ad-11e5-97e3-5c3849ce6fea.png)
 
-Analyses are performed in three stages, CCS, Classify and Cluster. Cluster is a multi-stage process which employs the Iterative Clustering and Error correction (ICE) algorithm. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
+Analyses are performed in three stages, CCS, Classify and Cluster. Cluster employs the Iterative Clustering and Error correction (ICE) algorithm. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
 * __CCS__
   * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences (CCSs) from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
 * __Classify__
