@@ -27,7 +27,7 @@ Table of contents
 
 ## Overview
 
-![alt tag](https://cloud.githubusercontent.com/assets/12494820/11311245/6b68e394-8f83-11e5-920a-5cbfd9f4f7ac.png)
+![isoseq expanded](https://cloud.githubusercontent.com/assets/12494820/11380910/c9775812-92ad-11e5-97e3-5c3849ce6fea.png)
 
 Analyses are performed in three stages, CCS, Classify and Cluster. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
 * __CCS__
