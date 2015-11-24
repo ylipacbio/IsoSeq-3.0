@@ -71,23 +71,32 @@ __Step 2. Classify__
 
 Classify can be run at the command line as follows:
 
-     pbtranscript classify [OPTIONS] ccs.xml classified.fasta
+     pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
+     pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset --nfl=isoseq_nfl.contigset
 
-Where ccs.xml is the xml file you generated in Step 1, and classified.fasta is your output file. 
+Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta.
 
-__Step 3. Cluster__
+Where isoseq_flnc.fasta or isoseq_flnc.contigset contains only the full-length, non-chimeric reads.
+
+Where isoseq_nfl.fasta or isoseq_flnc.contigset contains all non-full-length reads.
+
+**Note**, One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified `pbtranscript classify`. For example,
+
+    pbtranscript subset isoseq_draft.fasta isoseq_flnc.fasta --FL --nonChimeric
+
+__Step 3. Cluster and Polish__
 
 Cluster can be run at the command line as follows:
 
-     pbtranscript cluster [OPTIONS] classified.fasta clustered.fasta
+     pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --ccs_fofn=ccs.xml
+     pbtranscript cluster [OPTIONS] isoseq_flnc.contigset polished_clustered.contigset --quiver --nfl=isoseq_nfl.contigset --ccs_fofn=ccs.xml
 
-__Optional Step__
+**Note** that `--quiver --nfl=isoseq_nfl.fasta|contigset` must be specified in order to get `Quiver` polished consensus isoforms.
 
-Once Cluster has run, you can further subset your results using Subset. Subset can be run with the command:
+Optionally, you may call the following command to run ICE and create unpolished consensus isoforms only.
 
-    pbtranscript subset [OPTIONS] clustered.fasta subset.fasta
+     pbtranscript cluster [OPTIONS] isoseq_flnc.fasta unpolished_clustered.fasta
 
-If you are interested only in full-length, non-chimeric reads, you can also provide flnc.fasta to cluster instead of classified.fasta. flnc.fasta contains only the full-length, non-chimeric reads produced from classify.
 
 ##Running on the Command-Line with pbsmrtpipe
 
