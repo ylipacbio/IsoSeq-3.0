@@ -398,7 +398,7 @@ Next, we further look into full-length reads and classify them into
 artificial-concatemer chimeric reads or non-chimeric reads by locating primer hits
 within reads.
 
-    + __HMMER__: We use `phmmer` in __HMMER__ package to detect locations of
+    * __HMMER__: We use `phmmer` in __HMMER__ package to detect locations of
                  primer hits within reads and classify reads which have primer
                  hits in the middle of sequences as artificial-concatemer chimeric.
 
@@ -416,7 +416,7 @@ gene families.
 
 For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recording and slides](https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq).
 
-    + `pbdagcon`: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
+    * __pbdagcon__: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
                     tool which builds consensus sequences using Directed Acyclic Graph
                     Consensus.
 
@@ -428,7 +428,7 @@ reads into clusters based on similarity. Then for each cluster, we align raw sub
 of its assigned zmws towards its consensus sequence. Finally, we load quality values
 to these alignments and polish the consensus sequence using `Quiver`.
     
-    + __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
+    * __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
                   is a consensus and variant calling algorithm for PacBio reads.
                   `Quiver` finds the maximum likelihood template sequence given
                   PacBio reads of the template. It is used by IsoSeq to polish 
