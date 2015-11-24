@@ -14,7 +14,7 @@ Table of contents
     * [SMRTLink IsoSeq Options](#smrtlink-options)
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
-    * [pbsmrtpipe](#pbsmrtpipe-isoseq-options)
+    * [pbsmrtpipe IsoSeq Options](#pbsmrtpipe-isoseq-options)
   * [Output Files](#output-files)
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
