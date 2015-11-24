@@ -12,7 +12,7 @@ Table of contents
     * [Running with SMRTAnalysis](#running-with-smrtanalysis)
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
-  * [Advanced Analysis Options](#options)
+  * [Advanced Analysis Options](#advanced-analysis-options)
     * [SMRTLink IsoSeq Options](#smrtlink-isoseq-options)
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
