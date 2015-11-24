@@ -7,11 +7,11 @@ Table of contents
 
   * [Overview](#overview)
   * [Manual](#manual)
-    * [Running with SMRTLink](#running-with-smrtlink)
+    * [Running with SMRTAnalysis](#running-with-smrtanalysis)
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Options](#options)
-    * [SMRTLink](#smrtlink-options)
+    * [SMRTAnalysis](#smrtanalysis-options)
     * [Classify](#classify-options)
     * [Cluster](#cluster-options)
     * [Subset](#subset-options)
@@ -43,7 +43,7 @@ Analyses are performed in three stages, CCS, Classify and Cluster. For analyses 
 
 There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on the command-line using pbsmrtpipe so that you can run the whole IsoSeq analysis with one command given to pbsmrtpipe. 
 
-##Running with SMRTLink
+##Running with SMRTAnalysis
 
 ##Running on the Command-Line
 
@@ -357,7 +357,7 @@ This is a csv file each line of which contains the following fields:
 * read_type : Type of the supportive read
 
 
-## Modules
+## Algorithm Modules
 
 __CCS__
 
