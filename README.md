@@ -80,7 +80,7 @@ Where isoseq_flnc.fasta or isoseq_flnc.contigset.xml contains only the full-leng
 
 Where isoseq_nfl.fasta or isoseq_nfl.contigset.xml contains all non-full-length reads.
 
-**Note**, One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified `pbtranscript classify`. For example,
+**Note**: One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified `pbtranscript classify`. For example,
 
     pbtranscript subset isoseq_draft.fasta isoseq_flnc.fasta --FL --nonChimeric
 
@@ -91,7 +91,7 @@ Cluster can be run at the command line as follows:
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --bas_fofn=my.subreadset.xml
      pbtranscript cluster [OPTIONS] isoseq_flnc.contigset.xml polished_clustered.contigset.xml --quiver --nfl=isoseq_nfl.contigset.xml --bas_fofn=my.subreadset.xml
 
-**Note** that `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get `Quiver` polished consensus isoforms.
+**Note**: `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get `Quiver` polished consensus isoforms.
 
 Optionally, you may call the following command to run ICE and create unpolished consensus isoforms only.
 
@@ -140,7 +140,7 @@ An entry of `isoseq_options.xml` looks like this:
         </option>
 ```
 
-**Note** If you only want to run IsoSeq Classify without Cluster, please 
+**Note**: If you only want to run IsoSeq Classify without Cluster, please 
 create a xml for IsoSeq Classify Only.
 
 ```
@@ -176,7 +176,7 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 | Cluster-Polish | Trim QVs 3' | 30 | Ignore QV of n bases in the 3' end. |
 | Cluster-Polish | Trim QVs 5' | 100 | Ignore QV of n bases in the 5' end. |
 
-**Note** that the IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
+**Note**: The IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
 
 
 ## Classify Advanced Options 
@@ -378,10 +378,10 @@ are seen in a read, we classify it as a full-length read. Otherwise, we
 classify this read as non-full-length. We also removes primers and polyAs
 from reads and identify reads strands based on these info.
 
-**Note**, the current version of IsoSeq in SMRTLink 1.0 by default recognizes
+**Note**: The current version of IsoSeq in SMRTLink 1.0 by default recognizes
 Clontech SMRTer primers.
 
-**Note**, in SMRTLink 1.0, custom primers are __NOT__ supported. In order to
+**Note**: In SMRTLink 1.0, custom primers are __NOT__ supported. In order to
 use custom primers, You must call pbtranscript from command line like
 
 ```pbtranscript classify --primer your_primer_fasta ...```
@@ -417,7 +417,7 @@ gene families.
 
 For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recording and slides](https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq).
 
-    + __pbdagcon__: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
+    + __pbdagcon__: (pdagcon)[https://github.com/PacificBiosciences/pbdagcon] is a
                     tool which builds consensus sequences using Directed Acyclic Graph
                     Consensus.
 
