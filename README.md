@@ -31,9 +31,9 @@ Table of contents
 
 ![isoseq expanded](https://cloud.githubusercontent.com/assets/12494820/11380910/c9775812-92ad-11e5-97e3-5c3849ce6fea.png)
 
-Analyses are performed in three stages, CCS, Classify and Cluster. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
+Analyses are performed in three stages, CCS, Classify and Cluster. Cluster is a multi-stage process which employs the Iterative Clustering and Error correction (ICE) algorithm. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
 * __CCS__
-  * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
+  * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences (CCSs) from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
 * __Classify__
   * Classify is the second stage of an IsoSeq analysis. The key output of Classify is a file of full-length non-chimeric reads, and a file of non-full length reads. The key input of Classify is the circular consensus sequences generated from CCS. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but does not remove PCR chimeras. 
 * __Cluster__
@@ -47,9 +47,11 @@ There are three ways to run IsoSeq: Using SMRTLink, on the command-line, and on 
 
 ##Running with SMRTAnalysis
 
-##Running on the Command-Line
+To run Isoseq using SMRTAnalysis, follow the usual steps for analysing data on SMRTAnalysis. TODO: Link to document explaining SMRTAnalysis. 
 
-Without pbsmrtpipe, the analysis is performed in 3 steps:
+##Running on the Command Line
+
+On the command line the analysis is performed in 3 steps:
 
 1. Run CCS on your subreads, generating a CCS BAM file. Then generate an XML from the BAM file.
 2. Run Classify on your CCSs with the XML as input, generating a FASTA of annotated sequences.
@@ -61,9 +63,7 @@ First convert your subreads to circular consensus sequences. You can do this wit
 
      ccs --minLength=300 --minPasses=1 --minZScore=-999 --maxDropFraction=0.8 --minPredictedAccuracy=0.8 --minSnr=4 ccs.bam subreads.bam
 
-Where ccs options are described in [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md).
-
-Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. 
+Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. CCS options are described in [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md).
 Next, you will generate an XML file from your CCSs. You can do this with the commmand:
 
      dataset create --type ConsensusReadSet ccs.xml ccs.bam
@@ -77,13 +77,13 @@ Classify can be run at the command line as follows:
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset.xml
 
-Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta.
+Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta. 
 
 Where isoseq_flnc.fasta or isoseq_flnc.contigset.xml contains only the full-length, non-chimeric reads.
 
-Where isoseq_nfl.fasta or isoseq_nfl.contigset.xml contains all non-full-length reads.
+And where isoseq_nfl.fasta or isoseq_nfl.contigset.xml contains all non-full-length reads.
 
-**Note**: One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified `pbtranscript classify`. For example,
+**Note**: One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified when you run `pbtranscript classify`. For example,
 
     pbtranscript subset isoseq_draft.fasta isoseq_flnc.fasta --FL --nonChimeric
 
@@ -104,9 +104,8 @@ Optionally, you may call the following command to run ICE and create unpolished 
 ##Running on the Command-Line with pbsmrtpipe
 ###Install pbsmrtpipe
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
-if `smrtanalysis-3.0` has been installed on your system. Or you can (download 
-pbsmrtpipe)[https://github.com/PacificBiosciences/pbsmrtpipe] and 
-(install)[http://pbsmrtpipe.readthedocs.org/en/master/] it separately.
+if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and 
+[install]([http://pbsmrtpipe.readthedocs.org/en/master/).
     
 You can verify that pbsmrtpipe is running OK by:
 
