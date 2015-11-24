@@ -179,7 +179,7 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 **Note**: The IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
 
 
-## Classify Advanced Options 
+## Classify Options
 In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
@@ -214,7 +214,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-## Cluster Advanced Options
+## Cluster Options
 In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
 
 |           Positional Arguments           |     Example      |  Explanation      |
@@ -257,7 +257,6 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 | High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
 | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
 | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
-
 
 ## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
