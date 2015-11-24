@@ -104,8 +104,7 @@ Optionally, you may call the following command to run ICE and create unpolished 
 ##Running on the Command-Line with pbsmrtpipe
 ###Install pbsmrtpipe
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
-if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and 
-[install]([http://pbsmrtpipe.readthedocs.org/en/master/).
+if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
     
 You can verify that pbsmrtpipe is running OK by:
 
