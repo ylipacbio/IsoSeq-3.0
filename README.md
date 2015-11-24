@@ -416,11 +416,12 @@ gene families.
 
 For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recording and slides](https://github.com/PacificBiosciences/cDNA_primer/wiki/Understanding-PacBio-transcriptome-data#isoseq).
 
-    * __pbdagcon__: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
-                    tool which builds consensus sequences using Directed Acyclic Graph
-                    Consensus.
+  * __pbdagcon__: [`pdagcon`](https://github.com/PacificBiosciences/pbdagcon) is a
+                  tool which builds consensus sequences using Directed Acyclic Graph
+                  Consensus.
 
 __Polish__
+
 IsoSeq Polish further polishes consensus sequenecs of clusters (i.e., `pbdagcon` output)
 taking into account 
 We assign not only full-length non-chimeric ccs reads but also non-full-length ccs 
@@ -428,13 +429,13 @@ reads into clusters based on similarity. Then for each cluster, we align raw sub
 of its assigned zmws towards its consensus sequence. Finally, we load quality values
 to these alignments and polish the consensus sequence using `Quiver`.
     
-    * __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
-                  is a consensus and variant calling algorithm for PacBio reads.
-                  `Quiver` finds the maximum likelihood template sequence given
-                  PacBio reads of the template. It is used by IsoSeq to polish 
-                  consensus isoforms. `Quiver` uses qulity values and creates 
-                  higher-quality consensus sequence comapred with `pbdagcon`, but is
-                  more time-consuming.
+  * __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
+                is a consensus and variant calling algorithm for PacBio reads.
+                `Quiver` finds the maximum likelihood template sequence given
+                PacBio reads of the template. It is used by IsoSeq to polish 
+                consensus isoforms. `Quiver` uses qulity values and creates 
+                higher-quality consensus sequence comapred with `pbdagcon`, but is
+                more time-consuming.
 
 
 ## Diff SMRTAnalysis v3.0 vs v2.3
