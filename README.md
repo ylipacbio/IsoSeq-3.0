@@ -20,7 +20,7 @@ Table of contents
     * [Cluster Output Files](#cluster-output-files)
   * [Procedures](#procedures)
   * [Diff SMRTAnalysis v3.0 vs v2.3](#smrtanalysis-v30-vs-v23)
-  * [Handling RS and RS-II data](#handling-rs-and-rsii-data)
+  * [Handling RS and RS II data](#handling-rs-and-rsii-data)
   * [Glossary](#glossary)
 
 
@@ -457,7 +457,7 @@ SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
 | SMRTLink has two protocols: IsoSeq Classify Only and IsoSeq. The IsoSeq Classify Only protocol only classifies reads, while the IsoSeq protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using `Quiver`. | SMRTPortal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using `Quiver`. |
 
 
-##Handling RS and RS-II data
+##Handling RS and RS II data
 If you want to run IsoSeq on existing RS or RS-II data, you will need to convert 
 reads in bax.h5 files to BAM files.
 
