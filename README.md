@@ -158,7 +158,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subr
 ```
 
 ## Options
-## SMRTLink Advanced Analysis Parameters for the IsoSeq protocol and the IsoSeq Classify Only protocol
+## SMRTAnalysis Advanced Analysis Parameters for the IsoSeq protocol and the IsoSeq Classify Only protocol
 
 You may modify advanced analysis parameters for IsoSeq as described below via SMRTLink.
 
