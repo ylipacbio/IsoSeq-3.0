@@ -358,7 +358,7 @@ This is a csv file each line of which contains the following fields:
 * read_type : Type of the supportive read
 
 
-## Procedures 
+## Procedures
 
 __CCS__
 
@@ -398,10 +398,9 @@ Next, we further look into full-length reads and classify them into
 artificial-concatemer chimeric reads or non-chimeric reads by locating primer hits
 within reads.
 
-    * __HMMER__: We use `phmmer` in __HMMER__ package to detect locations of
-                 primer hits within reads and classify reads which have primer
-                 hits in the middle of sequences as artificial-concatemer chimeric.
-
+  * __HMMER__: We use `phmmer` in __HMMER__ package to detect locations of
+               primer hits within reads and classify reads which have primer
+               hits in the middle of sequences as artificial-concatemer chimeric.
 
 __Cluster__
 
@@ -439,13 +438,15 @@ to these alignments and polish the consensus sequence using `Quiver`.
 
 
 ## Diff SMRTAnalysis v3.0 vs v2.3
+
 PacBio will change the output of its Sequel instruments to 
 [BAM](http://pacbiofileformats.readthedocs.org/en/3.0/BAM.html) format oppose to
 bax.h5 of its RS and RS-II instruments. Major differences between IsoSeq in 
 SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
+
 *Note*: Functions of IsoSeq have NOT been changed since v2.3, and IsoSeq-Tofu has NOT been integrated.
 
-| IsoSeq in SMRTAnalysis v1.0 | IsoSeq in SMRTAnalysis v2.3  |
+| IsoSeq in SMRTAnalysis v3.0 | IsoSeq in SMRTAnalysis v2.3  |
 | --------------------------- | ---------------------------- |
 | SMRTAnalysis Web Server: SMRTLink | SMRTAnalysis Web Server: SMRTPortal |
 | Works on data from Sequel | Works on data from RS and RS II |
@@ -458,10 +459,12 @@ SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
 
 
 ##Handling RS and RS II data
+
 If you want to run IsoSeq on existing RS or RS-II data, you will need to convert 
 reads in bax.h5 files to BAM files.
 
 __Converting RS and RS-II data to BAM with SMRTLink__
+
 TODO: points to SMRTLink Doc.
 
 __Converting RS and RS-II data to BAM from command line__
@@ -469,9 +472,8 @@ __Converting RS and RS-II data to BAM from command line__
 ```
   ls path_to_your_input/movie.bax.h5
   bam2bax path_to_your_input/movie.bax.h5 -o path_to_your_output/movie --subreads
-  # Then path_to_your_output/movie.subreads.bam and path_to_your_output/movie.scraps.bam will be generated.
   ls path_to_your_output/movie.subreads.bam path_to_your_output/movie.scraps.bam
-
+  # path_to_your_output/movie.subreads.bam and path_to_your_output/movie.scraps.bam should be created.
 ```
 
 ## Glossary
