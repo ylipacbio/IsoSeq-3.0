@@ -184,10 +184,10 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 ## Classify Options
 In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
-|           Parameter            |   Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| readsFN  | ccs.bam,xml,fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
-| outReadsFN | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
+|           Parameter            | Type |  Example      |  Explanation      |
+| -------------------------- | ----- | --------------------------- | ----------------- |
+| readsFN  | positional | ccs.bam,xml,fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
+| outReadsFN | positional | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
 
 |           Optional Arguments           |     Example      |  Explanation      |
 | -------------------------- | --------------------------- | ----------------- |
