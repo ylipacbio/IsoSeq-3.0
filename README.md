@@ -301,7 +301,7 @@ The info fields are:
 * primer: index of primer seen in this read (remember  primer fasta file >F0 xxxxx >R0 xxxxx >F1 xxxxx >R1 xxxx)
 * chimera: whether or not this read is classified as  a chimeric cdna
 
-**Note**: Reads in `isoseq-flnc.fasta`` are always **strand-specific**. That is, the 5' and 3' primer (and sometimes the polyA tail) are used to tell whether the read is in the right strand. If needed, the scripts described here reverse-complement the original read and produce the sequence that is supposed to be the transcript. Non-full-length reads in `isoseq_nfl.fasta` on the other hand, could be in either orientation.
+**Note**: Reads in `isoseq-flnc.fasta` are always **strand-specific**. That is, the 5' and 3' primer (and sometimes the polyA tail) are used to tell whether the read is in the right strand. If needed, the scripts described here reverse-complement the original read and produce the sequence that is supposed to be the transcript. Non-full-length reads in `isoseq_nfl.fasta` on the other hand, could be in either orientation.
 
 __Summary (classify_summary.txt)__ 
 This file contains the following statistics:
