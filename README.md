@@ -220,7 +220,7 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 | optional | Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
 | ICE | cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
 | ICE | Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
-| ICE | Finer Quiver  | -h, --help | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
+| ICE | Finer Quiver  | --use_finer_qv | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
 | SGE | Run SGE  | --use_sge | Instructs Cluster to use SGE |
 | SGE | Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
 | SGE | SGE Job ID  | --unique_id UNIQUE_ID | Unique ID for submitting SGE jobs. |
