@@ -188,32 +188,18 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | -------------------------- | ----- | --------------------------- | ----------------- |
 | readsFN  | positional | ccs.bam,xml,fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
 | outReadsFN | positional | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
-
-|           Optional Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Help  | -h, --help | This prints the help message |
-| Full-Length Non-Chimeric  | --flnc FLNC_FA.fasta|contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset xml format|
-| Output Non-Full-Length  | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta or contigset xml format |
-
-|           HMMER Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
-| Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt) |
-| Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
-| Primers Report | --report PRIMERREPORTFN  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv) |
-| CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
-
-
-
-|      Chimera-detection Arguments     |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Minimum Sequence Length  | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
-| Minimum PHMMER Score  | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
-| Non-Full-Length Chimeras  | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
-
-|      Read-Extraction Arguments     |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Ignore polyA  | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
+| Help  | optional |  -h, --help | This prints the help message |
+| Full-Length Non-Chimeric | optional | --flnc FLNC_FA.fasta|contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset xml format|
+| Output Non-Full-Length  | optional | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta or contigset xml format |
+| HMMER Directory | HMMER | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
+| Summary | HMMER | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt) |
+| Primers File | HMMER | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
+| Primers Report | HMMER | --report PRIMERREPORTFN  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv) |
+| CPUs | HMMER | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
+| Minimum Sequence Length  | Chimera-detection | --min_seq_len MIN_SEQ_LEN   | Minimum sequence length to output (default: 300) |
+| Minimum PHMMER Score  | Chimera-detection | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
+| Non-Full-Length Chimeras  | Chimera-detection | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
+| Ignore polyA  | Read-Extraction | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
 ## Cluster Options
