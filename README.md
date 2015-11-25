@@ -184,8 +184,8 @@ You may modify advanced analysis parameters for IsoSeq as described below via SM
 ## Classify Options
 In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
-|           Type            |  Parameter |  Example      |  Explanation      |
-| -------------------------- | ----- | --------------------------- | ----------------- |
+|      Type       |  Parameter |  Example      |  Explanation      |
+| --------------- | ---------- | ------------- | ----------------- |
 | positional | readsFN  | ccs.bam,xml,fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
 | positional | outReadsFN | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
 | optional | Help |  -h, --help | This prints the help message |
@@ -205,46 +205,34 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 ## Cluster Options
 In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
 
-|           Positional Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Input Reads  | isoseq_flnc.fasta|contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
-| Output Isoforms | out.fasta|congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
-
-|           Optional Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Help  | -h, --help | This prints the help message |
-| Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
-| CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A ccs.fofn or ccs.bam or ccs.xml file. If not given, assume there is no QV information available. |
-| Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads |
-| Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
-| Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
-| Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
-| Report  | --report REPORT_FN | CSV file, each line contains a cluster, an associated read of the cluster and the read type |
-| Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
-
-|           ICE Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
-| Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
-| Finer Quiver  | -h, --help | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
-
-|           SGE environment Arguments          |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Run SGE  | --use_sge | Instructs Cluster to use SGE |
-| Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
-| SGE Job ID  | --unique_id UNIQUE_ID | Unique ID for submitting SGE jobs. |
-| BLASR Cores  | --blasr_nproc BLASR_NPROC | Number of cores for each BLASR job. |
-| Quiver CPUs  | --quiver_nproc QUIVER_NPROC | Number of CPUs each quiver job uses. |
-
-|           IceQuiver High QV/Low QV Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
-| Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
-| Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
-| High-Quality Isoforms FASTA  | --hq_isoforms_fa HQ_ISOFORMS_FA | Quiver polished, high quality isoforms in fasta, default: root_dir/output/all_quivered_hq.fa |
-| High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
-| Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
-| Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
+| Type  |  Paramter          |     Example      |  Explanation      |
+| ----- | ------------------ | ---------------- | ----------------- |
+| positional | Input Reads  | isoseq_flnc.fasta|contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
+| positional | Output Isoforms | out.fasta|congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
+| optional | Help  | -h, --help | This prints the help message |
+| optional | Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
+| optional | CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A ccs.fofn or ccs.bam or ccs.xml file. If not given, assume there is no QV information available. |
+| optional | Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads |
+| optional | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
+| optional | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
+| optional | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
+| optional | Report  | --report REPORT_FN | CSV file, each line contains a cluster, an associated read of the cluster and the read type |
+| optional | Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
+| ICE | cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
+| ICE | Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
+| ICE | Finer Quiver  | -h, --help | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
+| SGE | Run SGE  | --use_sge | Instructs Cluster to use SGE |
+| SGE | Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
+| SGE | SGE Job ID  | --unique_id UNIQUE_ID | Unique ID for submitting SGE jobs. |
+| SGE | BLASR Cores  | --blasr_nproc BLASR_NPROC | Number of cores for each BLASR job. |
+| SGE | Quiver CPUs  | --quiver_nproc QUIVER_NPROC | Number of CPUs each quiver job uses. |
+| IceQuiver High QV/Low QV | Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
+| IceQuiver High QV/Low QV | Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
+| IceQuiver High QV/Low QV | Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa HQ_ISOFORMS_FA | Quiver polished, high quality isoforms in fasta, default: root_dir/output/all_quivered_hq.fa |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
 
 ## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
