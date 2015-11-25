@@ -207,8 +207,8 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 
 | Type  |  Paramter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
-| positional | Input Reads  | isoseq_flnc.fasta|contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
-| positional | Output Isoforms | out.fasta|congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
+| positional | Input Reads  | isoseq_flnc.fasta,contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
+| positional | Output Isoforms | out.fasta,congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
 | optional | Help  | -h, --help | This prints the help message |
 | optional | Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
 | optional | CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A ccs.fofn or ccs.bam or ccs.xml file. If not given, assume there is no QV information available. |
