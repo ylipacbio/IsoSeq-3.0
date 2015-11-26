@@ -76,15 +76,21 @@ Classify can be run at the command line as follows:
 
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
  
- or 
+Where ccs.xml is the xml file you generated in Step 1.
+
+Where isoseq_flnc.fasta contains only the full-length, non-chimeric reads.
+
+And where isoseq_nfl.fasta contains all non-full-length reads.
+ 
+ Or you can run classify creating xml files instead of fasta files as follows:
  
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset.xml
 
-Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta. 
+Where ccs.xml is the xml file you generated in Step 1.
 
-Where isoseq_flnc.fasta or isoseq_flnc.contigset.xml contains only the full-length, non-chimeric reads.
+Where isoseq_flnc.contigset.xml contains only the full-length, non-chimeric reads.
 
-And where isoseq_nfl.fasta or isoseq_nfl.contigset.xml contains all non-full-length reads.
+And where isoseq_nfl.contigset.xml contains all non-full-length reads.
 
 **Note**: One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified when you run `pbtranscript classify`. For example,
 
