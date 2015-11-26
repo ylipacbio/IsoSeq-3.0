@@ -63,7 +63,7 @@ First convert your subreads to circular consensus sequences. You can do this wit
 
      ccs --minLength=300 --minPasses=1 --minZScore=-999 --maxDropFraction=0.8 --minPredictedAccuracy=0.8 --minSnr=4 ccs.bam subreads.bam
 
-Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. CCS options are described in [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md).
+Where ccs.bam is where the CCSs will be output, and subreads.bam is the file containing your subreads. CCS options are described in [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md). If you think that you have transcripts of interest that are less than 300 bp in length, be sure to adjust the `minLength` parameter. 
 Next, you will generate an XML file from your CCSs. You can do this with the commmand:
 
      dataset create --type ConsensusReadSet ccs.xml ccs.bam
