@@ -75,6 +75,9 @@ __Step 2. Classify__
 Classify can be run at the command line as follows:
 
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
+ 
+ or 
+ 
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset.xml
 
 Where ccs.xml is the xml file you generated in Step 1, and all full-length non-chimeric reads are in isoseq_flnc.fasta and all non-chimeric reads are in isoseq_nfl.fasta. 
