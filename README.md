@@ -414,14 +414,14 @@ taking into account
 We assign not only full-length non-chimeric ccs reads but also non-full-length ccs 
 reads into clusters based on similarity. Then for each cluster, we align raw subreads
 of its assigned zmws towards its consensus sequence. Finally, we load quality values
-to these alignments and polish the consensus sequence using Quiver.
+to these alignments and polish the consensus sequence using `Quiver`.
     
-  * __Quiver__: [Quiver](https://github.com/PacificBiosciences/GenomicConsensus) 
+  * __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
                 is a consensus and variant calling algorithm for PacBio reads.
-                Quiver finds the maximum likelihood template sequence given
+                `Quiver` finds the maximum likelihood template sequence given
                 PacBio reads of the template. It is used by IsoSeq to polish 
-                consensus isoforms. Quiver uses quality values and creates 
-                higher-quality consensus sequence comapred with pbdagcon, but is
+                consensus isoforms. `Quiver` uses quality values and creates 
+                higher-quality consensus sequence comapred with `pbdagcon`, but is
                 more time-consuming.
 
 
@@ -442,8 +442,8 @@ SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
 | Supports PacBio [DataSet](http://pbsmrtpipe.readthedocs.org/en/master/getting_started.html#appendix-b-working-with-datasets) | Does *NOT* support PacBio Dataset |
 | Uses new algorithm pbccs to create CCS reads | Uses `ConsensusTools.sh` to create CCS reads |
 | Does *NOT* support using customer primers from SMRTLink | Supports using customer primers from SMRTPortal |
-| Does *NOT* support using GMAP to align consensus isoforms to reference from SMRTLink | Supports using GMAP to align consensus isoforms to reference from SMRTPortal |
-| SMRTLink has two protocols: IsoSeq Classify Only and IsoSeq. The IsoSeq Classify Only protocol only classifies reads, while the IsoSeq protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using Quiver. | SMRTPortal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using Quiver. |
+| Does *NOT* support using `GMAP` to align consensus isoforms to reference from SMRTLink | Supports using `GMAP` to align consensus isoforms to reference from SMRTPortal |
+| SMRTLink has two protocols: `IsoSeq Classify Only` and `IsoSeq`. The `IsoSeq Classify Only` protocol only classifies reads, while the `IsoSeq` protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using `Quiver`. | SMRTPortal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using `Quiver`. |
 
 
 ##Handling RS and RS II data
