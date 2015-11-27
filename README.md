@@ -33,7 +33,7 @@ Table of contents
 
 Analyses are performed in three stages, CCS, Classify and Cluster. Cluster employs the Iterative Clustering and Error correction (ICE) algorithm. For analyses performed on the command-line, there is an optional tool, Subset, for subsetting the IsoSeq results.
 * __CCS__
-  * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences (CCSs) from your subreads. More information about CCS is available here: https://github.com/PacificBiosciences/pbccs/blob/master/README.md
+  * CCS is the first stage of an IsoSeq analysis. CCS builds circular consensus sequences (CCSs) from your subreads. More information about CCS is available  [here](https://github.com/PacificBiosciences/pbccs/blob/master/README.md).
 * __Classify__
   * Classify is the second stage of an IsoSeq analysis. The key output of Classify is a file of full-length non-chimeric reads, and a file of non-full length reads. The key input of Classify is the circular consensus sequences generated from CCS. Classify will identify and remove polyA/T tails, remove primers, and identify read strandedness. Classify also removes artificial concatemers, but does not remove PCR chimeras. 
 * __Cluster__
