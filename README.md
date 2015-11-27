@@ -51,7 +51,7 @@ To run Isoseq using SMRTAnalysis, follow the usual steps for analysing data on S
 
 ##Running on the Command Line
 
-On the command line the analysis is performed in 3 steps:
+On the command line, the analysis is performed in 3 steps:
 
 1. Run CCS on your subreads, generating a CCS BAM file. Then generate an XML from the BAM file.
 2. Run Classify on your CCSs with the XML as input, generating a FASTA of annotated sequences.
@@ -59,7 +59,7 @@ On the command line the analysis is performed in 3 steps:
 
 __Step 1. CCS__
 
-First convert your subreads to circular consensus sequences. You can do this with the command:
+First, convert your subreads to circular consensus sequences. You can do this with the command:
 
      ccs --minLength=300 --minPasses=1 --minZScore=-999 --maxDropFraction=0.8 --minPredictedAccuracy=0.8 --minSnr=4 ccs.bam subreads.bam
 
@@ -68,7 +68,7 @@ Next, you will generate an XML file from your CCSs. You can do this with the com
 
      dataset create --type ConsensusReadSet ccs.xml ccs.bam
 
-Where ccs.xml is the name of the xml file you are generating and ccs.bam is the name of the bam file you generated previously using the ccs command. 
+Where ccs.xml is the name of the XML file you are generating and `ccs.bam` is the name of the BAM file you generated previously using the `ccs` command. 
 
 __Step 2. Classify__
 
@@ -76,21 +76,21 @@ Classify can be run at the command line as follows:
 
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.fasta --nfl=isoseq_nfl.fasta
  
-Where ccs.xml is the xml file you generated in Step 1.
+Where `ccs.xml` is the XML file you generated in Step 1.
 
-Where isoseq_flnc.fasta contains only the full-length, non-chimeric reads.
+Where `isoseq_flnc.fasta` contains only the full-length, non-chimeric reads.
 
-And where isoseq_nfl.fasta contains all non-full-length reads.
+And where `isoseq_nfl.fasta` contains all non-full-length reads.
  
  Or you can run classify creating xml files instead of fasta files as follows:
  
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset.xml
 
-Where ccs.xml is the xml file you generated in Step 1.
+Where `ccs.xml` is the xml file you generated in Step 1.
 
-Where isoseq_flnc.contigset.xml contains only the full-length, non-chimeric reads.
+Where `isoseq_flnc.contigset.xml` contains only the full-length, non-chimeric reads.
 
-And where isoseq_nfl.contigset.xml contains all non-full-length reads.
+And where `isoseq_nfl.contigset.xml` contains all non-full-length reads.
 
 **Note**: One can always use `pbtranscript Subset` to further subset isoseq_draft.fasta if `--flnc` and `--nfl` are not specified when you run `pbtranscript classify`. For example,
 
@@ -123,23 +123,23 @@ You can verify that pbsmrtpipe is running OK by:
     pbsmrtpipe --help
 
 ### Create a dataset
-Now create an xml file from your subreads.
+Now create an XML file from your subreads.
 
 ```
 dataset create --type SubreadSet my.subreadset.xml subreads1.bam subreads2.bam ...
 ```
-This will create a file called my.subreadset.xml. 
+This will create a file called `my.subreadset.xml`. 
 
 
 ### Create and edit isoseq options and global options for pbsmrtpipe
-Create a global options xml file which contains SGE related, job chunking and
+Create a global options XML file which contains SGE related, job chunking and
 job distribution options that you may modify by:
 
 ```
  pbsmrtpipe show-workflow-options -o global_options.xml
 ```
 
-Create an isoseq options xml file which contains isoseq related options that 
+Create an isoseq options XML file which contains isoseq related options that 
 you may modify by:
 ```
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
@@ -154,7 +154,7 @@ An entry of `isoseq_options.xml` looks like this:
 ```
 
 **Note**: If you only want to run IsoSeq Classify without Cluster, please 
-create a xml for IsoSeq Classify Only.
+create an XML for IsoSeq Classify Only.
 
 ```
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq_classify -o isoseq_classify_options.xml
