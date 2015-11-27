@@ -92,7 +92,7 @@ Where `isoseq_flnc.contigset.xml` contains only the full-length, non-chimeric re
 
 And where `isoseq_nfl.contigset.xml` contains all non-full-length reads.
 
-**Note**: One can always use `pbtranscript subset` to further subset `isoseq_draft.fasta` if `--flnc` and `--nfl` are not specified when you run `pbtranscript classify`. For example,
+**Note**: One can always use `pbtranscript subset` to further subset `isoseq_draft.fasta` if `--flnc` and `--nfl` are not specified when you run `pbtranscript classify`. For example:
 
     pbtranscript subset isoseq_draft.fasta isoseq_flnc.fasta --FL --nonChimeric
 
