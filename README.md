@@ -217,7 +217,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 ## Cluster Options
 In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
 
-| Type  |  Paramter          |     Example      |  Explanation      |
+| Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
 | positional | Input Reads  | isoseq_flnc.fasta,contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
 | positional | Output Isoforms | out.fasta,congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
@@ -249,7 +249,7 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 ## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
 
-| Type  |  Paramter          |     Example      |  Explanation      |
+| Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | --------------------------- | ----------------- |
 | positional | Input Sequences  | isoseq_draft.fasta  | Input fasta file (usually isoseq_draft.fasta) |
 | positional | Output Sequences | isoseq_subset.fasta | Output fasta file |
