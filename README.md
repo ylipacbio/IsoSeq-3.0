@@ -101,7 +101,9 @@ __Step 3. Cluster and Polish__
 Cluster can be run at the command line as follows:
 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --bas_fofn=my.subreadset.xml
+
 Or
+
      pbtranscript cluster [OPTIONS] isoseq_flnc.contigset.xml polished_clustered.contigset.xml --quiver --nfl=isoseq_nfl.contigset.xml --bas_fofn=my.subreadset.xml
 
 **Note**: `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get `Quiver` polished consensus isoforms.
