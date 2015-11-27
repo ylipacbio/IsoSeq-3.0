@@ -249,19 +249,16 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 ## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
 
-|           Positional Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Input Sequences  | isoseq_draft.fasta  | Input fasta file (usually isoseq_draft.fasta) |
-| Output Sequences | isoseq_subset.fasta | Output fasta file |
-
-|           Optional Arguments           |     Example      |  Explanation      |
-| -------------------------- | --------------------------- | ----------------- |
-| Help  | -h, --help | This prints the help message |
-| Output Full-length  | --FL | Reads to output must be Full-Length, with 3' primer and 5' primer and polyA tail seen. |
-| Output Non-Full-length  | --nonFL | Reads to output must be Non-Full-Length reads. |
-| Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
-| Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
-| Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
+| Type  |  Paramter          |     Example      |  Explanation      |
+| ----- | ------------------ | --------------------------- | ----------------- |
+| positional | Input Sequences  | isoseq_draft.fasta  | Input fasta file (usually isoseq_draft.fasta) |
+| positional | Output Sequences | isoseq_subset.fasta | Output fasta file |
+| optional | Help  | -h, --help | This prints the help message |
+| optional | Output Full-length  | --FL | Reads to output must be Full-Length, with 3' primer and 5' primer and polyA tail seen. |
+| optional | Output Non-Full-length  | --nonFL | Reads to output must be Non-Full-Length reads. |
+| optional | Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
+| optional | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
+| optional | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
 ## pbsmrtpipe IsoSeq Options
 
