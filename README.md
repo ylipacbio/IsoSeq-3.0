@@ -68,7 +68,7 @@ Next, you will generate an XML file from your CCSs. You can do this with the com
 
      dataset create --type ConsensusReadSet ccs.xml ccs.bam
 
-Where ccs.xml is the name of the XML file you are generating and `ccs.bam` is the name of the BAM file you generated previously using the `ccs` command. 
+Where `ccs.xml` is the name of the XML file you are generating and `ccs.bam` is the name of the BAM file you generated previously using the `ccs` command. 
 
 __Step 2. Classify__
 
@@ -82,7 +82,7 @@ Where `isoseq_flnc.fasta` contains only the full-length, non-chimeric reads.
 
 And where `isoseq_nfl.fasta` contains all non-full-length reads.
  
- Or you can run classify creating xml files instead of fasta files as follows:
+ Or you can run classify creating XML files instead of FASTA files as follows:
  
      pbtranscript classify [OPTIONS] ccs.xml isoseq_draft.fasta --flnc=isoseq_flnc.contigset.xml --nfl=isoseq_nfl.contigset.xml
 
@@ -98,7 +98,7 @@ And where `isoseq_nfl.contigset.xml` contains all non-full-length reads.
 
 __Step 3. Cluster and Polish__
 
-Cluster can be run at the command line as follows:
+`cluster` can be run at the command line as follows:
 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta polished_clustered.fasta --quiver --nfl=isoseq_nfl.fasta --bas_fofn=my.subreadset.xml
 
@@ -106,7 +106,7 @@ Or
 
      pbtranscript cluster [OPTIONS] isoseq_flnc.contigset.xml polished_clustered.contigset.xml --quiver --nfl=isoseq_nfl.contigset.xml --bas_fofn=my.subreadset.xml
 
-**Note**: `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get `Quiver` polished consensus isoforms.
+**Note**: `--quiver --nfl=isoseq_nfl.fasta|contigset.xml` must be specified in order to get Quiver polished consensus isoforms.
 
 Optionally, you may call the following command to run ICE and create unpolished consensus isoforms only.
 
@@ -115,8 +115,8 @@ Optionally, you may call the following command to run ICE and create unpolished 
 
 ##Running on the Command-Line with pbsmrtpipe
 ###Install pbsmrtpipe
-pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
-if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
+pbsmrtpipe is a part of smrtanalysis-3.0 package and will be installed
+if smrtanalysis-3.0 has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
     
 You can verify that pbsmrtpipe is running OK by:
 
@@ -131,7 +131,7 @@ dataset create --type SubreadSet my.subreadset.xml subreads1.bam subreads2.bam .
 This will create a file called `my.subreadset.xml`. 
 
 
-### Create and edit isoseq options and global options for pbsmrtpipe
+### Create and edit isoseq options and global options for `pbsmrtpipe`.
 Create a global options XML file which contains SGE related, job chunking and
 job distribution options that you may modify by:
 
@@ -145,7 +145,7 @@ you may modify by:
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
 ```
 
-An entry of `isoseq_options.xml` looks like this:
+The entries in the options XML files have the format:
 
 ```
  <option id="pbtranscript.task_options.min_seq_len">
