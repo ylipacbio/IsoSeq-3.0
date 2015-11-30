@@ -13,7 +13,7 @@ Table of contents
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Advanced Analysis Options](#advanced-analysis-options)
-    * [SMRTLink/pbsmrtpipe IsoSeq Options](#smrtlink-isoseq-options)
+    * [SMRTLink/pbsmrtpipe IsoSeq Options](#smrtlinkpbsmrtpipe-isoseq-options)
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
     * [Subset Options](#subset-options)
