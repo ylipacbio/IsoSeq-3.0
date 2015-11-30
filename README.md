@@ -173,7 +173,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subr
 
 ## SMRTLink/pbsmrtpipe IsoSeq Options
 
-You may modify advanced analysis parameters for IsoSeq as described below via SMRTLink.
+You may modify IsoSeq advanced analysis parameters for SMRTLink or pbsmrtpipe as follows. 
 
 | Module |           Parameter           | pbsmrtpipe name |     Default      |  Explanation      |
 | ------ | -------------------------- | ------- | --------------------------- | ----------------- |
