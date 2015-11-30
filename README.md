@@ -17,7 +17,6 @@ Table of contents
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
     * [Subset Options](#subset-options)
-    * [pbsmrtpipe IsoSeq Options](#pbsmrtpipe-isoseq-options)
   * [Output Files](#output-files)
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
