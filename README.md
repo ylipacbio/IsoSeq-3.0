@@ -387,7 +387,7 @@ For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recordin
 __Polish__
 
 IsoSeq Polish further polishes consensus sequenecs of clusters (i.e., `pbdagcon` output)
-taking into account 
+taking quality value info into account.
 We assign not only full-length non-chimeric ccs reads but also non-full-length ccs 
 reads into clusters based on similarity. Then for each cluster, we align raw subreads
 of its assigned zmws towards its consensus sequence. Finally, we load quality values
