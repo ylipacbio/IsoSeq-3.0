@@ -44,11 +44,11 @@ Analyses are performed in three stages, CCS, Classify and Cluster. Cluster emplo
 
 There are three ways to run IsoSeq: Using SMRTLink, on the command line, and on the command line using pbsmrtpipe so that you can run the whole IsoSeq analysis with one command given to pbsmrtpipe. 
 
-##Running with SMRTAnalysis
+###Running with SMRTAnalysis
 
 To run Isoseq using SMRTAnalysis, follow the usual steps for analysing data on SMRTAnalysis. TODO: Link to document explaining SMRTAnalysis. 
 
-##Running on the Command Line
+###Running on the Command Line
 
 On the command line, the analysis is performed in 3 steps:
 
@@ -112,8 +112,8 @@ Optionally, you may call the following command to run ICE and create unpolished 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta unpolished_clustered.fasta
 
 
-##Running on the Command-Line with pbsmrtpipe
-###Install pbsmrtpipe
+###Running on the Command-Line with pbsmrtpipe
+####Install pbsmrtpipe
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
 if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
     
@@ -121,7 +121,7 @@ You can verify that pbsmrtpipe is running OK by:
 
     pbsmrtpipe --help
 
-### Create a dataset
+#### Create a dataset
 Now create an XML file from your subreads.
 
 ```
@@ -130,7 +130,7 @@ dataset create --type SubreadSet my.subreadset.xml subreads1.bam subreads2.bam .
 This will create a file called `my.subreadset.xml`. 
 
 
-### Create and edit isoseq options and global options for `pbsmrtpipe`.
+#### Create and edit isoseq options and global options for `pbsmrtpipe`.
 Create a global options XML file which contains SGE related, job chunking and
 job distribution options that you may modify by:
 
@@ -170,7 +170,7 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subr
 
 ## Advanced Analysis Options
 
-## SMRTLink/pbsmrtpipe IsoSeq Options
+### SMRTLink/pbsmrtpipe IsoSeq Options
 
 You may modify IsoSeq advanced analysis parameters for SMRTLink or pbsmrtpipe as follows. 
 
@@ -192,7 +192,7 @@ You may modify IsoSeq advanced analysis parameters for SMRTLink or pbsmrtpipe as
 **Note**: The IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
 
 
-## Classify Options
+### Classify Options
 In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
 |      Type       |  Parameter |  Example      |  Explanation      |
@@ -213,7 +213,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | Read-Extraction | Ignore polyA | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-## Cluster Options
+### Cluster Options
 In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
 
 | Type  |  Parameter          |     Example      |  Explanation      |
@@ -245,7 +245,7 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 | IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
 | IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
 
-## Subset Options
+### Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
 
 | Type  |  Parameter          |     Example      |  Explanation      |
@@ -260,7 +260,7 @@ In order to show pbtranscript Subset options via command line: `pbtranscript sub
 | optional | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
 ## Output Files
-## Classify Output Files
+### Classify Output Files
 __Classify FASTA Output (isoseq_*.fasta)__
 
 `isoseq_flnc.fasta` contains all full-length, non-artificial-concatemer reads.
@@ -308,7 +308,7 @@ This file contains the following statistics:
 a little less than the number of full-length reads, we can confirm that the number of
 artificial concatemers is very low. This indicates a successful SMRTbell library prep.
 
-##Cluster Output Files
+###Cluster Output Files
 
 __Summary (cluster_summary.txt)__
 This file contains the following statistics:
