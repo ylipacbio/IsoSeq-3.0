@@ -112,7 +112,7 @@ Optionally, you may call the following command to run ICE and create unpolished 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta unpolished_clustered.fasta
 
 
-###Running on the Command-Line with pbsmrtpipe
+###Running on the Command Line with pbsmrtpipe
 ####Install pbsmrtpipe
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
 if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
