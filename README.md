@@ -9,7 +9,7 @@ Table of contents
 
   * [Overview](#overview)
   * [Manual](#manual)
-    * [Running with SMRT Analysis](#running-with-smrtanalysis)
+    * [Running with SMRT Link](#running-with-smrt-link)
     * [Running on the Command-Line](#running-on-the-command-line)
     * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Advanced Analysis Options](#advanced-analysis-options)
@@ -44,9 +44,9 @@ Analyses are performed in three stages, CCS, Classify and Cluster. Cluster emplo
 
 There are three ways to run the Iso-Seq application: Using SMRT Link, on the command line, and on the command line using pbsmrtpipe so that you can run the whole Iso-Seq Analysis with one command given to pbsmrtpipe. 
 
-##Running with SMRT Analysis
+##Running with SMRT Link
 
-To run the Iso-Seq application using SMRT Analysis, follow the usual steps for analysing data on SMRT Analysis. TODO: Link to document explaining SMRT Analysis. 
+To run the Iso-Seq application using SMRT Link, follow the usual steps for analysing data on SMRT Link. TODO: Link to document explaining SMRT Link. 
 
 ##Running on the Command Line
 
