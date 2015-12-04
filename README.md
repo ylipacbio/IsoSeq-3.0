@@ -1,19 +1,19 @@
-# IsoSeq: PacBio Isoform Sequencing.
+# IsoSeq™: PacBio® Isoform Sequencing.
 
-The Isoform Sequencing (IsoSeq) application refers to [PacBio’s proprietary methods and applications for transcriptome sequencing](http://www.pacb.com/applications/rna-sequencing/). The IsoSeq application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
+The Isoform Sequencing (Iso-Seq™) Anaylsis refers to [PacBio’s proprietary methods and software applications for transcriptome sequencing](http://www.pacb.com/applications/rna-sequencing/). The Iso-Seq application generates full-length cDNA sequences — from the 5’ end of transcripts to the poly-A tail — eliminating the need for transcriptome reconstruction using isoform-inference algorithms. The Iso-Seq method generates accurate information about alternatively spliced exons and transcriptional start sites. It also delivers information about poly-adenylation sites for transcripts up to 10 kb in length across the full complement of isoforms within targeted genes or the entire transcriptome.
 
-This document describes the IsoSeq application in SMRTAnalysis v3.0 release, which includes SMRTLink v1.0. Previous IsoSeq documents can be found in its [github wiki](https://github.com/PacificBiosciences/cDNA_primer/wiki).
+This document describes the Iso-Seq software in SMRT® Analysis v3.0 release, which includes SMRT Link v1.0. Previous Iso-Seq documents can be found in its [github wiki](https://github.com/PacificBiosciences/cDNA_primer/wiki).
 
 Table of contents
 =================
 
   * [Overview](#overview)
   * [Manual](#manual)
-    * [Running with SMRTAnalysis](#running-with-smrtanalysis)
-    * [Running on the Command Line](#running-on-the-command-line)
-    * [Running on the Command Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
+    * [Running with SMRT Analysis](#running-with-smrtanalysis)
+    * [Running on the Command-Line](#running-on-the-command-line)
+    * [Running on the Command-Line with pbsmrtpipe](#running-on-the-command-line-with-pbsmrtpipe)
   * [Advanced Analysis Options](#advanced-analysis-options)
-    * [SMRTLink/pbsmrtpipe IsoSeq Options](#smrtlinkpbsmrtpipe-isoseq-options)
+    * [SMRT Link/pbsmrtpipe IsoSeq Options](#smrtlinkpbsmrtpipe-isoseq-options)
     * [Classify Options](#classify-options)
     * [Cluster Options](#cluster-options)
     * [Subset Options](#subset-options)
@@ -21,8 +21,8 @@ Table of contents
     * [Classify Output Files](#classify-output-files)
     * [Cluster Output Files](#cluster-output-files)
   * [Algorithm Modules](#algorithm-modules)
-  * [Diff SMRTAnalysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
-  * [Handling RS and RS II data](#handling-rs-and-rs-ii-data)
+  * [Diff SMRT Analysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
+  * [Handling PacBio RS and PacBio RS II data](#handling-rs-and-rs-ii-data)
   * [Glossary](#glossary)
 
 
@@ -42,13 +42,13 @@ Analyses are performed in three stages, CCS, Classify and Cluster. Cluster emplo
 
 ##Manual
 
-There are three ways to run IsoSeq: Using SMRTLink, on the command line, and on the command line using pbsmrtpipe so that you can run the whole IsoSeq analysis with one command given to pbsmrtpipe. 
+There are three ways to run the Iso-Seq application: Using SMRT Link, on the command line, and on the command line using pbsmrtpipe so that you can run the whole Iso-Seq Analysis with one command given to pbsmrtpipe. 
 
-###Running with SMRTAnalysis
+##Running with SMRT Analysis
 
-To run Isoseq using SMRTAnalysis, follow the usual steps for analysing data on SMRTAnalysis. TODO: Link to document explaining SMRTAnalysis. 
+To run the Iso-Seq application using SMRT Analysis, follow the usual steps for analysing data on SMRT Analysis. TODO: Link to document explaining SMRT Analysis. 
 
-###Running on the Command Line
+##Running on the Command Line
 
 On the command line, the analysis is performed in 3 steps:
 
@@ -112,8 +112,8 @@ Optionally, you may call the following command to run ICE and create unpolished 
      pbtranscript cluster [OPTIONS] isoseq_flnc.fasta unpolished_clustered.fasta
 
 
-###Running on the Command Line with pbsmrtpipe
-####Install pbsmrtpipe
+##Running on the Command-Line with pbsmrtpipe
+###Install pbsmrtpipe
 pbsmrtpipe is a part of `smrtanalysis-3.0` package and will be installed
 if `smrtanalysis-3.0` has been installed on your system. Or you can [download   pbsmrtpipe](https://github.com/PacificBiosciences/pbsmrtpipe) and [install](http://pbsmrtpipe.readthedocs.org/en/master/).
     
@@ -121,7 +121,7 @@ You can verify that pbsmrtpipe is running OK by:
 
     pbsmrtpipe --help
 
-#### Create a dataset
+### Create a dataset
 Now create an XML file from your subreads.
 
 ```
@@ -130,7 +130,7 @@ dataset create --type SubreadSet my.subreadset.xml subreads1.bam subreads2.bam .
 This will create a file called `my.subreadset.xml`. 
 
 
-#### Create and edit isoseq options and global options for `pbsmrtpipe`.
+### Create and edit Iso-Seq Analysis options and global options for `pbsmrtpipe`.
 Create a global options XML file which contains SGE related, job chunking and
 job distribution options that you may modify by:
 
@@ -138,7 +138,7 @@ job distribution options that you may modify by:
  pbsmrtpipe show-workflow-options -o global_options.xml
 ```
 
-Create an isoseq options XML file which contains isoseq related options that 
+Create an Iso-Seq options XML file which contains Iso-Seq related options that 
 you may modify by:
 ```
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq -o isoseq_options.xml
@@ -152,8 +152,8 @@ The entries in the options XML files have the format:
         </option>
 ```
 
-**Note**: If you only want to run IsoSeq Classify without Cluster, please 
-create an XML for IsoSeq Classify Only.
+**Note**: If you only want to run Iso-Seq Classify without Cluster, please 
+create an XML for Iso-Seq Classify Only.
 
 ```
  pbsmrtpipe show-template-details pbsmrtpipe.pipelines.sa3_ds_isoseq_classify -o isoseq_classify_options.xml
@@ -161,8 +161,8 @@ create an XML for IsoSeq Classify Only.
 
 And you can modify options using your favorite text editor, such as vim.
 
-### Run IsoSeq from pbsmrtpipe
-Once you have set your options, you are ready to run isoseq via pbsmrtpipe:
+### Run the Iso-Seq application from pbsmrtpipe
+Once you have set your options, you are ready to run the Iso-Seq software application via pbsmrtpipe:
 
 ```
 pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subreadset.xml --preset-xml=isoseq_options.xml --preset-xml=global_options.xml
@@ -170,29 +170,29 @@ pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_isoseq -e eid_subread:my.subr
 
 ## Advanced Analysis Options
 
-### SMRTLink/pbsmrtpipe IsoSeq Options
+## SMRT Link/pbsmrtpipe Iso-Seq Options
 
-You may modify IsoSeq advanced analysis parameters for SMRTLink or pbsmrtpipe as follows. 
+You may modify Iso-Seq advanced analysis parameters for SMRT Link or pbsmrtpipe as follows. 
 
-| Module |           Parameter (pbsmrtpipe name) |     Default      |  Explanation      |
-| ------ | ------------------------------------- | --------------------------- | ----------------- |
-| CCS | Max. dropped fraction (max_drop_fraction) | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
-| CCS | Minimum length (min_length) | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
-| CCS | Minimum Number of Passes (min_passes) | 1 | Sets a minimum number of passes for a ZMW to be emitted. This is the number of full passes. Full passes must have an adapter hit before and after the insert sequence and so does not include any partial passes at the start and end of the sequencing reaction. Additionally, the full pass count does not include any reads that were dropped by the Z-Filter. |
-| CCS | Minimum Predicted Accuracy (min_predicted_accuracy) | 0.8 | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
-| CCS | Minimum read score (min_read_score) | 0.75 | Minimum read score of input subreads |
-| CCS | Minimum SNR (min_snr) | 4 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell stochastically lands when loading occurs. SMRTbells that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
-| CCS | Minimum Z Score (min_zscore) | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
-| IsoSeq Classify | Ignore polyA (ignore_polya) | FALSE | FL does not require polyA tail (default: turned off) |
-| IsoSeq Classify | Minimum sequence length (min_seq_len) | 300 | Minimum sequence length to output (default: 300) |
-| IsoSeq Cluster | Minimum Quiver Accuracy (hq_quiver_min_accuracy) | 0.99 | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
-| IsoSeq Cluster-Polish | Trim QVs 3' (qv_trim_3p) | 30 | Ignore QV of n bases in the 3' end. |
-| IsoSeq Cluster-Polish | Trim QVs 5' (qv_trim_5p) | 100 | Ignore QV of n bases in the 5' end. |
+| Module |           Parameter           | pbsmrtpipe name |     Default      |  Explanation      |
+| ------ | -------------------------- | ------- | --------------------------- | ----------------- |
+| CCS | Max. dropped fraction  | max_drop_fraction | 0.08  | Maximum fraction of subreads that can be dropped before giving up |
+| CCS | Minimum length | min_length | 300 | Sets a minimum length requirement for the median size of insert reads in order to generate a consensus sequence. If the targeted template is known to be a particular size range, this can filter out alternative DNA templates. |
+| CCS | Minimum Number of Passes | min_passes | 1 | Sets a minimum number of passes for a ZMW to be emitted. This is the number of full passes. Full passes must have an adapter hit before and after the insert sequence and so does not include any partial passes at the start and end of the sequencing reaction. Additionally, the full pass count does not include any reads that were dropped by the Z-Filter. |
+| CCS | Minimum Predicted Accuracy | min_predicted_accuracy | 0.8 | The minimum predicted accuracy of a read. CCS generates an accuracy prediction for each read, defined as the expected percentage of matches in an alignment of the consensus sequence to the true read. A value of 0.99 indicates that only reads expected to be 99% accurate are emitted. |
+| CCS | Minimum read score | min_read_score | 0.75 | Minimum read score of input subreads |
+| CCS | Minimum SNR | min_snr | 4 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell™ template stochastically lands when loading occurs. SMRTbell templates that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
+| CCS | Minimum Z Score | min_zscore | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
+| Classify | Ignore polyA | ignore_polya | FALSE | FL does not require polyA tail (default: turned off) |
+| Classify | Min. seq. length | min_seq_len | 300 | Minimum sequence length to output (default: 300) |
+| Cluster | Minimum Quiver Accuracy | hq_quiver_min_accuracy | 0.99 | Minimum allowed Quiver accuracy to classify an isoform as hiqh-quality. |
+| Cluster-Polish | Trim QVs 3' | qv_trim_3p | 30 | Ignore QV of n bases in the 3' end. |
+| Cluster-Polish | Trim QVs 5' | qv_trim_5p | 100 | Ignore QV of n bases in the 5' end. |
 
-**Note**: The IsoSeq Classify Only protocol does not perform isoform level clustering and only uses a subset of advanced analysis parameters.
+**Note**: The Iso-Seq Classify Only protocol does not perform isoform-level clustering and only uses a subset of advanced analysis parameters.
 
 
-### Classify Options
+## Classify Options
 In order to display Classify advanced options via command line: `pbtranscript classify --help`.
 
 |      Type       |  Parameter |  Example      |  Explanation      |
@@ -213,8 +213,8 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | Read-Extraction | Ignore polyA | --ignore_polyA   | FL does not require polyA tail (default: turned off) |
 
 
-### Cluster Options
-In order to show IsoSeq Cluster advanced options via command line: `pbtranscript cluster`.
+## Cluster Options
+In order to show Iso-Seq Cluster advanced options via command line: `pbtranscript cluster`.
 
 | Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
@@ -230,7 +230,7 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 | optional | Report  | --report REPORT_FN | CSV file, each line contains a cluster, an associated read of the cluster and the read type |
 | optional | Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
 | ICE | cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
-| ICE | Quiver  | --quiver | Call quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
+| ICE | Quiver  | --quiver | Call Quiver to polish consensus isoforms using non-full-length non-chimeric CCS reads. |
 | ICE | Finer Quiver  | --use_finer_qv | Use finer classes of QV information from CCS input instead of a single QV from FASTQ. This option is slower and consumes more memory. |
 | SGE | Run SGE  | --use_sge | Instructs Cluster to use SGE |
 | SGE | Maximum SGE Jobs  | --max_sge_jobs MAX_SGE_JOBS | The maximum number of jobs that will be submitted to SGE concurrently. |
@@ -240,12 +240,12 @@ In order to show IsoSeq Cluster advanced options via command line: `pbtranscript
 | IceQuiver High QV/Low QV | Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
 | IceQuiver High QV/Low QV | Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
 | IceQuiver High QV/Low QV | Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
-| IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa HQ_ISOFORMS_FA | Quiver polished, high quality isoforms in fasta, default: root_dir/output/all_quivered_hq.fa |
-| IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver polished, high quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
-| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver polished, low quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
-| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver polished, low quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa HQ_ISOFORMS_FA | Quiver-polished, high-quality isoforms in fasta, default: root_dir/output/all_quivered_hq.fa |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq HQ_ISOFORMS_FQ | Quiver-polished, high-quality isoforms in fastq, default: root_dir/output/all_quivered_hq.fq |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa LQ_ISOFORMS_FA | Quiver-polished, low-quality isoforms in fasta, default: root_dir/output/all_quivered_lq.fa |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq LQ_ISOFORMS_FQ | Quiver-polished, low-quality isoforms in fastq, default: root_dir/output/all_quivered_lq.fq |
 
-### Subset Options
+## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
 
 | Type  |  Parameter          |     Example      |  Explanation      |
@@ -260,7 +260,7 @@ In order to show pbtranscript Subset options via command line: `pbtranscript sub
 | optional | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
 
 ## Output Files
-### Classify Output Files
+## Classify Output Files
 __Classify FASTA Output (isoseq_*.fasta)__
 
 `isoseq_flnc.fasta` contains all full-length, non-artificial-concatemer reads.
@@ -280,7 +280,7 @@ These lines have the format:
 <movie_name>/<ZMW>/<start>_<end>_CCS INFO
 ```
 The info fields are:
-* strand: either + or -,  whether a read is forward or reverse-complement cdna,
+* strand: either + or -,  whether a read is forward or reverse-complement cDNA,
 * fiveseen: whether or not 5' prime is seen in this read, 1 yes, 0 no
 * polyAseen: whether or not poly A tail is seen, 1 yes, 0 no
 * threeseen: whether or not 3' prime is seen, 1 yes, 0 no
@@ -308,7 +308,7 @@ This file contains the following statistics:
 a little less than the number of full-length reads, we can confirm that the number of
 artificial concatemers is very low. This indicates a successful SMRTbell library prep.
 
-###Cluster Output Files
+##Cluster Output Files
 
 __Summary (cluster_summary.txt)__
 This file contains the following statistics:
@@ -327,13 +327,13 @@ This is a csv file each line of which contains the following fields:
 
 __CCS__
 
-`pbccs` is a tool to create circular consensus sequences (ccs) sequence
+`pbccs` is a tool to create circular consensus sequences (CCS) sequence
 from raw subreads for PacBio sequences. See [pbccs doc](https://github.com/PacificBiosciences/pbccs/blob/master/README.md) for usage.
 
 
 __Classify__
 
-Isoseq Classify classifies reads into full-length or non-full-length
+Iso-Seq Classify classifies reads into full-length or non-full-length
 reads, artifical-concatemer chimeric or non-chimeric read.
 
 In order to classify a read as full-length or non-full-length, we search
@@ -342,10 +342,10 @@ are seen in a read, we classify it as a full-length read. Otherwise, we
 classify this read as non-full-length. We also removes primers and polyAs
 from reads and identify reads strands based on these info.
 
-**Note**: The current version of IsoSeq in SMRTLink 1.0 by default recognizes
-Clontech SMRTer primers.
+**Note**: The current version of the Iso-Seq application in SMRT Link 1.0 by default recognizes
+Clontech SMARTer primers.
 
-**Note**: In SMRTLink 1.0, custom primers are __NOT__ supported. In order to
+**Note**: In SMRT Link 1.0, custom primers are __NOT__ supported. In order to
 use custom primers, You must call pbtranscript from command line like
 
 ```pbtranscript classify --primer your_primer_fasta ...```
@@ -369,9 +369,9 @@ within reads.
 
 __Cluster__
 
-IsoSeq Cluster performs isoform level clustering using the Iterative Clustering
+Iso-Seq Cluster performs isoform-level clustering using the Iterative Clustering
 and Error correction (ICE) algorithm, which iteratively classifies full-length
-non-chimeric ccs reads into clusters and builds consensus sequences of
+non-chimeric CCS reads into clusters and builds consensus sequences of
 clusters using `pbdagcon`.
 
 ICE is customized to work well on alternative isoforms and alternative 
@@ -386,53 +386,51 @@ For a detailed explanation of ICE, please refer to the [Iso-Seq webinar recordin
 
 __Polish__
 
-IsoSeq Polish further polishes consensus sequenecs of clusters (i.e., `pbdagcon` output)
-taking quality value info into account.
-We assign not only full-length non-chimeric ccs reads but also non-full-length ccs 
+Iso-Seq Polish further polishes consensus sequenecs of clusters (i.e., `pbdagcon` output)
+taking into account all the QV information. 
+We assign not only full-length non-chimeric CCS reads but also non-full-length CCS 
 reads into clusters based on similarity. Then for each cluster, we align raw subreads
-of its assigned zmws towards its consensus sequence. Finally, we load quality values
+of its assigned ZMWs towards its consensus sequence. Finally, we load quality values
 to these alignments and polish the consensus sequence using `Quiver`.
     
   * __Quiver__: [`Quiver`](https://github.com/PacificBiosciences/GenomicConsensus) 
-                is a consensus and variant calling algorithm for PacBio reads.
+                is a consensus and variant-calling algorithm for PacBio reads.
                 `Quiver` finds the maximum likelihood template sequence given
-                PacBio reads of the template. It is used by IsoSeq to polish 
+                PacBio reads of the template. It is used by the Iso-Seq application to polish 
                 consensus isoforms. `Quiver` uses quality values and creates 
                 higher-quality consensus sequence comapred with `pbdagcon`, but is
                 more time-consuming.
 
 
-## Diff SMRTAnalysis v3.0 vs v2.3
+## Diff SMRT Analysis v3.0 vs v2.3
 
-PacBio will change the output of its Sequel instruments to 
-[BAM](http://pacbiofileformats.readthedocs.org/en/3.0/BAM.html) format oppose to
-bax.h5 of its RS and RS-II instruments. Major differences between IsoSeq in 
-SMRTAnalysis v3.0 and IsoSeq in SMRTAnalysis v2.3 are listed in the table below.
+The output of the Sequel™ instruments is [BAM](http://pacbiofileformats.readthedocs.org/en/3.0/BAM.html) format, while the output of the PacBio RS and PacBio RS II instruments is bax.h5. 
+Major differences between Iso-Seq software in SMRT Analysis v3.0 and Iso-Seq software in SMRT Analysis v2.3 are listed in the table below.
 
-*Note*: Functions of IsoSeq have NOT been changed since v2.3, and IsoSeq-Tofu has NOT been integrated.
+*Note*: Functions of Iso-Seq Analysis have NOT been changed since v2.3, and Iso-Seq Tofu has NOT been integrated.
 
-| IsoSeq in SMRTAnalysis v3.0 | IsoSeq in SMRTAnalysis v2.3  |
+| Iso-Seq Application in SMRT Analysis v3.0 | Iso-Seq Application in SMRT Analysis v2.3  |
 | --------------------------- | ---------------------------- |
-| SMRTAnalysis Web Server: SMRTLink | SMRTAnalysis Web Server: SMRTPortal |
-| Works on data from Sequel | Works on data from RS and RS II |
+| SMRT Analysis Web Server: SMRT Link | SMRT Analysis Web Server: SMRT Portal |
+| Works on data from Sequel instrument | Works on data from PacBio RS and RS II |
 | Input PacBio reads are stored in BAM | Input PacBio reads are stored in bax.h5 format |
 | Supports PacBio [DataSet](http://pbsmrtpipe.readthedocs.org/en/master/getting_started.html#appendix-b-working-with-datasets) | Does *NOT* support PacBio Dataset |
 | Uses new algorithm pbccs to create CCS reads | Uses `ConsensusTools.sh` to create CCS reads |
-| Does *NOT* support using customer primers from SMRTLink | Supports using customer primers from SMRTPortal |
-| Does *NOT* support using `GMAP` to align consensus isoforms to reference from SMRTLink | Supports using `GMAP` to align consensus isoforms to reference from SMRTPortal |
-| SMRTLink has two protocols: `IsoSeq Classify Only` and `IsoSeq`. The `IsoSeq Classify Only` protocol only classifies reads, while the `IsoSeq` protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using `Quiver`. | SMRTPortal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using `Quiver`. |
+| Does *NOT* support using customer primers from SMRT Link | Supports using customer primers from SMRT Portal |
+| Does *NOT* support using `GMAP` to align consensus isoforms to reference from SMRT Link | Supports using `GMAP` to align consensus isoforms to reference from SMRT Portal |
+| SMRT Link has two protocols: `IsoSeq Classify Only` and `IsoSeq`. The `IsoSeq Classify Only` protocol only classifies reads, while the `IsoSeq` protocol not only classifies reads but also generates consensus isoforms using ICE and polish them using `Quiver`. | SMRT Portal has one protocol: RS_IsoSeq, which provides options such that users can calssify reads, or run ICE and generate unpolished consensus isoforms or polish consensus isoforms using `Quiver`. |
 
 
-##Handling RS and RS II data
+##Handling PacBio RS and PacBio RS II data
 
-If you want to run IsoSeq on existing RS or RS-II data, you will need to convert 
+If you want to run the Iso-Seq application on existing PacBio RS or PacBio RS II data, you will need to convert 
 reads in bax.h5 files to BAM files.
 
-__Converting RS and RS-II data to BAM with SMRTLink__
+__Converting PacBio RS and PacBio RS II data to BAM with SMRT Link__
 
-TODO: points to SMRTLink Doc.
+TODO: points to SMRT Link Doc.
 
-__Converting RS and RS-II data to BAM from command line__
+__Converting PacBio RS and PacBio RS II data to BAM from command line__
 
 ```
   ls path_to_your_input/movie.bax.h5
@@ -443,18 +441,15 @@ __Converting RS and RS-II data to BAM from command line__
 
 ## Glossary
 * __Chimera__
-  * IsoSeq Classify classifies reads as artificial-concatemer chimeric or non-chimeric
+  * Iso-Seq Classify classifies reads as artificial-concatemer chimeric or non-chimeric
     based on whether or not primers are found in the middle of the sequence.
 
 * __High QV | Low QV__
-  * Isoseq Cluster generates polished consensus isoforms are classified into either
-    high quality or low quality isoforms. We classify an isoform as high quality if 
+  * Iso-Seq Cluster generates polished consensus isoforms are classified into either
+    high-quality or low-quality isoforms. We classify an isoform as high quality if 
     its conseusus accuracy is no less than a cut-off, otherwise low quality.
     The default cut-off is **0.99**. You may change this value from command line, or
-    via SMRTLink Advanced Analysis Parameters when creating an IsoSeq job.
-
-
-
+    via SMRT Link Advanced Analysis Parameters when creating an Iso-Seq job.
 
 
 <sup>For Research Use Only. Not for use in diagnostic procedures. © Copyright 2010 - 2014, Pacific Biosciences of California, Inc. All rights reserved. Information in this document is subject to change without notice. Pacific Biosciences assumes no responsibility for any errors or omissions in this document. Certain notices, terms, conditions and/or use restrictions may pertain to your use of Pacific Biosciences products and/or third party products. Please refer to the applicable Pacific Biosciences Terms and Conditions of Sale and the applicable license terms at http://www.pacificbiosciences.com/licenses.html.</sup>
