@@ -22,7 +22,7 @@ Table of contents
     * [Cluster Output Files](#cluster-output-files)
   * [Algorithm Modules](#algorithm-modules)
   * [Diff SMRT Analysis v3.0 vs v2.3](#diff-smrtanalysis-v30-vs-v23)
-  * [Handling PacBio RS and PacBio RS II data](#handling-rs-and-rs-ii-data)
+  * [Handling PacBio RS and PacBio RS II data](#handling-pacbio-rs-and-pacbio-rs-ii-data)
   * [Glossary](#glossary)
 
 
