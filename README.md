@@ -339,8 +339,8 @@ reads, artifical-concatemer chimeric or non-chimeric read.
 In order to classify a read as full-length or non-full-length, we search
 for primers and polyA within reads. If and only if both primers and polyAs 
 are seen in a read, we classify it as a full-length read. Otherwise, we
-classify this read as non-full-length. We also removes primers and polyAs
-from reads and identify reads strands based on these info.
+classify the read as non-full-length. We also remove primers and polyAs
+from reads and identify read strandedness based on this information.
 
 **Note**: The current version of the Iso-Seq application in SMRT Link 1.0 by default recognizes
 Clontech SMARTer primers.
