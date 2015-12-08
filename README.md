@@ -433,10 +433,7 @@ TODO: points to SMRT Link Doc.
 __Converting PacBio RS and PacBio RS II data to BAM from command line__
 
 ```
-  ls path_to_your_input/movie.bax.h5
-  bam2bax path_to_your_input/movie.bax.h5 -o path_to_your_output/movie --subreads
-  ls path_to_your_output/movie.subreads.bam path_to_your_output/movie.scraps.bam
-  # path_to_your_output/movie.subreads.bam and path_to_your_output/movie.scraps.bam should be created.
+  bax2bam -o mynewbam mydata.1.bax.h5 mydata.2.bax.h5 mydata.3.bax.h5
 ```
 
 ## Glossary
