@@ -453,4 +453,4 @@ __Converting PacBio RS and PacBio RS II data to BAM from command line__
 
 <sup> Visit the [PacBio Developer's Network Website](http://pacbiodevnet.com) for the most up-to-date links to downloads, documentation and more. </sup>
 
-<sup>[Terms of Use](http://pacbiodevnet.com/Terms_of_Use.html) | [Trademarks](http://pacb.com/terms-of-use/index.html#trademarks) | [Contact Us](mailto:devnet@pacificbiosciences.com) </sup>
+<sup>[Terms of Use & Trademarks](http://www.pacb.com/legal-and-trademarks/site-usage/) | [Contact Us](mailto:devnet@pacificbiosciences.com) </sup>
