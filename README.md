@@ -207,7 +207,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | HMMER | Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
 | HMMER | Primers Report | --report PRIMERREPORTFN  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv) |
 | HMMER | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
-| Chimera-detection | Minimum Sequence Length | --min_seq_len MIN_SEQ_LEN   | Minimum CCS length to analyzed (default: 300) |
+| Chimera-detection | Minimum Sequence Length | --min_seq_len MIN_SEQ_LEN   | Minimum CCS length to analyzed. Fragments shorter than minimum  sequence length are excluded from analysis. (default: 300) |
 | Chimera-detection | Minimum PHMMER Score | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
 | Chimera-detection | Non-Full-Length Chimeras | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
 | Read-Extraction | Ignore polyA | --ignore_polyA   | Full-Length criteria does not require polyA tail (default: turned off) |
