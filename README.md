@@ -210,7 +210,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | Chimera-detection | Minimum Sequence Length | --min_seq_len MIN_SEQ_LEN   | Minimum CCS length to be analyzed. Fragments shorter than minimum sequence length are excluded from analysis. (default: 300) |
 | Chimera-detection | Minimum PHMMER Score | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
 | Chimera-detection | Non-Full-Length Chimeras | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
-| Read-Extraction | Ignore polyA | --ignore_polyA   | Full-Length criteria does not require polyA tail (default: turned off) |
+| Read-Extraction | Ignore polyA | --ignore_polyA   | Full-Length criteria does not require polyA tail. By default this is off, which means that polyA tails are required for a sequence to be considered full length. When it is turned on, sequences do not need polyA tails to be considered full length.  (default: turned off) |
 
 
 ## Cluster Options
@@ -257,7 +257,7 @@ In order to show pbtranscript Subset options via command line: `pbtranscript sub
 | optional | Output Non-Full-length  | --nonFL | Reads to output must be Non-Full-Length reads. |
 | optional | Output Non-Chimeric  | --nonChimeric | Reads to output must be non-chimeric reads. |
 | optional | Output Read-Length  | --printReadLengthOnly | Only print read lengths, no read names and sequences. |
-| optional | Ignore polyA Tails  |  --ignore_polyA | FL does not require polyA tail (default: turned off) |
+| optional | Ignore polyA Tails  |  --ignore_polyA | Full-Length criteria does not require polyA tail. By default this is off, which means that polyA tails are required for a sequence to be considered full length. When it is turned on, sequences do not need polyA tails to be considered full length.  (default: turned off) |
 
 ## Output Files
 ## Classify Output Files
