@@ -240,10 +240,10 @@ In order to show Iso-Seq Cluster advanced options via command line: `pbtranscrip
 | IceQuiver High QV/Low QV | Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
 | IceQuiver High QV/Low QV | Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
 | IceQuiver High QV/Low QV | Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
-| IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa output/all_quivered_hq.fa | Quiver-polished, high-quality isoforms in fasta (default: output/all_quivered_hq.fa). |
-| IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq output/all_quivered_hq.fq | Quiver-polished, high-quality isoforms in fastq (default: output/all_quivered_hq.fq). |
-| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa output/all_quivered_lq.fa | Quiver-polished, low-quality isoforms in fasta (default: output/all_quivered_lq.fa). |
-| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq output/all_quivered_lq.fq | Quiver-polished, low-quality isoforms in fastq (default: output/all_quivered_lq.fq). |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa output/all_quivered_hq.fa | Quiver-polished, high-quality isoforms in FASTA (default: output/all_quivered_hq.fa). |
+| IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq output/all_quivered_hq.fq | Quiver-polished, high-quality isoforms in FASTQ (default: output/all_quivered_hq.fq). |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa output/all_quivered_lq.fa | Quiver-polished, low-quality isoforms in FASTA (default: output/all_quivered_lq.fa). |
+| IceQuiver High QV/Low QV | Low-Quality Isoforms FASTQ  | --lq_isoforms_fq output/all_quivered_lq.fq | Quiver-polished, low-quality isoforms in FASTQ (default: output/all_quivered_lq.fq). |
 
 ## Subset Options
 In order to show pbtranscript Subset options via command line: `pbtranscript subset`.
