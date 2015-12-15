@@ -223,7 +223,7 @@ In order to show Iso-Seq Cluster advanced options via command line: `pbtranscrip
 | optional | Help  | -h, --help | This prints the help message. |
 | optional | Input Non-Full-Length  | --nfl_fa isoseq_nfl.fasta | Input non-full-length reads in FASTA format, used for polishing consensus isoforms. |
 | optional | CCS QVs FOFN  | --ccs_fofn ccs.fofn | A ccs.fofn or ccs.bam or ccs.xml file. If not given, Cluster assumes there is no QV information available. |
-| optional | Reads QVs FOFN |  --bas_fofn my.subreadset.xml  | A file which provides quality values of raw reads and subreads. Can be either a FOFN of BAM or BAX files, or an dataset XML.  |
+| optional | Reads QVs FOFN |  --bas_fofn my.subreadset.xml  | A file which provides quality values of raw reads and subreads. Can be either a FOFN of BAM or BAX files, or a dataset XML.  |
 | optional | Output Directory  | -d output/, --outDir output/ | Directory to store temporary and output cluster files (default: output/). |
 | optional | Temp Directory  | --tmp_dir tmp/ | Directory to store temporary files (default: tmp/). |
 | optional | Summary  | --summary my.cluster_summary.txt | TXT file to output cluster summary (default: my.cluster_summary.txt). |
