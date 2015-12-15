@@ -183,8 +183,8 @@ You may modify Iso-Seq advanced analysis parameters for SMRT Link or pbsmrtpipe 
 | CCS | Minimum read score | min_read_score | 0.75 | Minimum read score of input subreads. |
 | CCS | Minimum SNR | min_snr | 4 | This filter removes data that is likely to contain deletions. SNR is a measure of the strength of signal for all 4 channels (A, C, G, T) used to detect basepair incorporation. The SNR can vary depending on where in the ZMW a SMRTbell™ template stochastically lands when loading occurs. SMRTbell templates that land near the edge and away from the center of the ZMW have a less intense signal, and as a result can contain sequences with more "missed" basepairs. This value sets the threshold for minimum required SNR for any of the four channels. Data with SNR < 3.75 is typically considered lower quality. |
 | CCS | Minimum Z Score | min_zscore | -9999 | The minimum Z-Score for a subread to be included in the consensus generating process. |
-| Classify | Ignore polyA | ignore_polya | FALSE | Full-Length criteria does not require polyA tail. By default this is off, which means that polyA tails are required for a sequence to be considered full length. When it is turned on, sequences do not need polyA tails to be considered full length.  (default: turned off) |
-| Classify | Min. seq. length | min_seq_len | 300 | Minimum sequence length to output (default: 300) |
+| Classify | Ignore polyA | ignore_polya | FALSE | Full-Length criteria does not require polyA tail. By default this is off, which means that polyA tails are required for a sequence to be considered full length. When it is turned on, sequences do not need polyA tails to be considered full length. |
+| Classify | Min. seq. length | min_seq_len | 300 | Minimum sequence length to output |
 | Cluster | Minimum Quiver Accuracy | hq_quiver_min_accuracy | 0.99 | Minimum allowed Quiver accuracy to classify an isoform as hiqh-quality. |
 | Cluster-Polish | Trim QVs 3' | qv_trim_3p | 30 | Ignore QV of n bases in the 3' end. |
 | Cluster-Polish | Trim QVs 5' | qv_trim_5p | 100 | Ignore QV of n bases in the 5' end. |
