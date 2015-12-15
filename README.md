@@ -203,7 +203,7 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 | optional | Full-Length Non-Chimeric | --flnc FLNC_FA.fasta,contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset XML format. |
 | optional | Output Non-Full-Length | --nfl NFL_FA.fasta | Outputs non-full-length reads in FASTA or contigset XML format. |
 | HMMER | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/). |
-| HMMER | Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt). |
+| HMMER | Summary | -summary out.classify_summary.txt | TXT file to output classify summary (default: out.classify_summary.txt). |
 | HMMER | Primers File | -p PRIMERFN, --primer primers.fa  | Primer FASTA file (default: primers.fa). |
 | HMMER | Primers Report | --report out.primer_info.csv  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv). |
 | HMMER | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8). |
