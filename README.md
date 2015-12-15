@@ -218,15 +218,15 @@ In order to show Iso-Seq Cluster advanced options via command line: `pbtranscrip
 
 | Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
-| positional | Input Reads  | isoseq_flnc.fasta,contigset.xml  | Input full-length non-chimeric reads in fasta or contigset xml format, used for clustering consensus isoforms |
-| positional | Output Isoforms | out.fasta,congitset.xml | Output predicted (unpolished) consensus isoforms in fasta file. |
-| optional | Help  | -h, --help | This prints the help message |
-| optional | Input Non-Full-Length  | --nfl_fa NFL_FA.fasta | Input non-full-length reads in fasta format, used for polishing consensus isoforms, e.g., isoseq_nfl.fasta |
-| optional | CCS QVs FOFN  | --ccs_fofn CCS_FOFN | A ccs.fofn or ccs.bam or ccs.xml file. If not given, assume there is no QV information available. |
-| optional | Reads QVs FOFN |  --bas_fofn BAS_FOFN  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads |
-| optional | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files.(default: output/) |
-| optional | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files.(default, write to root_dir/tmp.). |
-| optional | Summary  | --summary SUMMARY_FN | TXT file to output cluster summary (default: my.cluster_summary.txt) |
+| positional | Input Reads  | isoseq_flnc.fasta,contigset.xml  | Input full-length non-chimeric reads in FASTA or contigset XML format. Used for clustering consensus isoforms. |
+| positional | Output Isoforms | out.fasta,congitset.xml | Output predicted (unpolished) consensus isoforms in FASTA file. |
+| optional | Help  | -h, --help | This prints the help message. |
+| optional | Input Non-Full-Length  | --nfl_fa isoseq_nfl.fasta | Input non-full-length reads in FASTA format, used for polishing consensus isoforms. |
+| optional | CCS QVs FOFN  | --ccs_fofn ccs.fofn | A ccs.fofn or ccs.bam or ccs.xml file. If not given, Cluster assumes there is no QV information available. |
+| optional | Reads QVs FOFN |  --bas_fofn my.subreadset.xml  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads. |
+| optional | Output Directory  | -d ROOT_DIR, --outDir ROOT_DIR | Directory to store temporary and output cluster files (default: output/). |
+| optional | Temp Directory  | --tmp_dir TMP_DIR | Directory to store temporary files (default: root_dir/tmp/). |
+| optional | Summary  | --summary my.cluster_summary.txt | TXT file to output cluster summary (default: my.cluster_summary.txt). |
 | optional | Report  | --report REPORT_FN | CSV file, each line contains a cluster, an associated read of the cluster and the read type |
 | optional | Pickle  | --pickle_fn PICKLE_FN | Developers' option, from which all clusters can be reconstructed. |
 | ICE | cDNA  | --cDNA_size {under1k,between1k2k,between2k3k,above3k} | Estimated cDNA size. |
