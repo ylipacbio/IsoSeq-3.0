@@ -224,8 +224,8 @@ In order to show Iso-Seq Cluster advanced options via command line: `pbtranscrip
 | optional | Input Non-Full-Length  | --nfl_fa isoseq_nfl.fasta | Input non-full-length reads in FASTA format, used for polishing consensus isoforms. |
 | optional | CCS QVs FOFN  | --ccs_fofn ccs.fofn | A ccs.fofn or ccs.bam or ccs.xml file. If not given, Cluster assumes there is no QV information available. |
 | optional | Reads QVs FOFN |  --bas_fofn my.subreadset.xml  | A FOFN of bax/bas.h5, or bam, or bam.xml files (e.g., my.subreadset.xml), which contain quality values of raw reads and subreads. |
-| optional | Output Directory  | -d ROOT_DIR, --outDir output/ | Directory to store temporary and output cluster files (default: output/). |
-| optional | Temp Directory  | --tmp_dir root_dir/tmp/ | Directory to store temporary files (default: root_dir/tmp/). |
+| optional | Output Directory  | -d output/, --outDir output/ | Directory to store temporary and output cluster files (default: output/). |
+| optional | Temp Directory  | --tmp_dir tmp/ | Directory to store temporary files (default: tmp/). |
 | optional | Summary  | --summary my.cluster_summary.txt | TXT file to output cluster summary (default: my.cluster_summary.txt). |
 | optional | Report  | --report report.csv | A CSV file, each line containing a cluster, an associated read of the cluster, and the read type. |
 | optional | Pickle  | --pickle_fn PICKLE_FN | Developers' option from which all clusters can be reconstructed. |
@@ -238,8 +238,8 @@ In order to show Iso-Seq Cluster advanced options via command line: `pbtranscrip
 | SGE | BLASR Cores  | --blasr_nproc BLASR_NPROC | Number of cores for each BLASR job. |
 | SGE | Quiver CPUs  | --quiver_nproc QUIVER_NPROC | Number of CPUs each quiver job uses. |
 | IceQuiver High QV/Low QV | Minimum Quiver Accuracy  | --hq_quiver_min_accuracy HQ_QUIVER_MIN_ACCURACY | Minimum allowed quiver accuracy to classify an isoform as hiqh-quality. |
-| IceQuiver High QV/Low QV | Trim QVs 5'  | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
-| IceQuiver High QV/Low QV | Trim QVs 3'  | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
+| IceQuiver High QV/Low QV | Trim QVs 5' | --qv_trim_5 QV_TRIM_5 | Ignore QV of n bases in the 5' end. |
+| IceQuiver High QV/Low QV | Trim QVs 3' | --qv_trim_3 QV_TRIM_3 | Ignore QV of n bases in the 3' end. |
 | IceQuiver High QV/Low QV | High-Quality Isoforms FASTA  | --hq_isoforms_fa output/all_quivered_hq.fa | Quiver-polished, high-quality isoforms in FASTA (default: output/all_quivered_hq.fa). |
 | IceQuiver High QV/Low QV | High-Quality Isoforms FASTQ  | --hq_isoforms_fq output/all_quivered_hq.fq | Quiver-polished, high-quality isoforms in FASTQ (default: output/all_quivered_hq.fq). |
 | IceQuiver High QV/Low QV | Low-Quality Isoforms FASTA  | --lq_isoforms_fa output/all_quivered_lq.fa | Quiver-polished, low-quality isoforms in FASTA (default: output/all_quivered_lq.fa). |
