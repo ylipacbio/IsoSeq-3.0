@@ -197,18 +197,18 @@ In order to display Classify advanced options via command line: `pbtranscript cl
 
 |      Type       |  Parameter |  Example      |  Explanation      |
 | --------------- | ---------- | ------------- | ----------------- |
-| positional | readsFN  | ccs.bam,xml,fasta  | First positional argument. It specifies input ccs reads in bam, dataset xml, or fasta format |
-| positional | outReadsFN | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in fasta or contigset xml format |
-| optional | Help |  -h, --help | This prints the help message |
-| optional | Full-Length Non-Chimeric | --flnc FLNC_FA.fasta|contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset xml format|
-| optional | Output Non-Full-Length | --nfl NFL_FA.fasta | Outputs non-full-length reads in fasta or contigset xml format |
-| HMMER | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/) |
-| HMMER | Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt) |
-| HMMER | Primers File | -p PRIMERFN, --primer PRIMERFN  | Primer fasta file (default: primers.fa) |
-| HMMER | Primers Report | --report PRIMERREPORTFN  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv) |
-| HMMER | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8) |
-| Chimera-detection | Minimum Sequence Length | --min_seq_len MIN_SEQ_LEN   | Minimum CCS length to be analyzed. Fragments shorter than minimum sequence length are excluded from analysis. (default: 300) |
-| Chimera-detection | Minimum PHMMER Score | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10) |
+| positional | readsFN  | ccs.bam,xml,fasta  | First positional argument. It specifies input CCS reads in BAM, dataset XML, or FASTA format. |
+| positional | outReadsFN | isoseq_draft.fasta,contigset.xml | Second positional argument. Output file which contains all classified reads in FASTA or contigset XML format. |
+| optional | Help |  -h, --help | This prints the help message. |
+| optional | Full-Length Non-Chimeric | --flnc FLNC_FA.fasta,contigset.xml | Outputs full-length non-chimeric reads in fasta or contigset XML format. |
+| optional | Output Non-Full-Length | --nfl NFL_FA.fasta | Outputs non-full-length reads in FASTA or contigset XML format. |
+| HMMER | HMMER Directory | -d OUTDIR, --outDir OUTDIR  | Directory to store HMMER output (default: output/). |
+| HMMER | Summary | -summary SUMMARY_FN.txt | TXT file to output classify summary (default: out.classify_summary.txt). |
+| HMMER | Primers File | -p PRIMERFN, --primer primers.fa  | Primer FASTA file (default: primers.fa). |
+| HMMER | Primers Report | --report out.primer_info.csv  | CSV file of primer info. Contains the same info found in the description lines of the output FASTA (default: out.primer_info.csv). |
+| HMMER | CPUs | --cpus CPUS  | Number of CPUs to run HMMER (default: 8). |
+| Chimera-detection | Minimum Sequence Length | --min_seq_len MIN_SEQ_LEN   | Minimum CCS length to be analyzed. Fragments shorter than minimum sequence length are excluded from analysis (default: 300). |
+| Chimera-detection | Minimum PHMMER Score | --min_score MIN_SCORE   | Minimum phmmer score for primer hit (default: 10). |
 | Chimera-detection | Non-Full-Length Chimeras | --detect_chimera_nfl   | Detect chimeric reads among non-full-length reads. Non-full-length non-chimeric/chimeric reads will saved to outDir/nflnc.fasta and outDir/nflc.fasta. |
 | Read-Extraction | Ignore polyA | --ignore_polyA   | Full-Length criteria does not require polyA tail. By default this is off, which means that polyA tails are required for a sequence to be considered full length. When it is turned on, sequences do not need polyA tails to be considered full length.  (default: turned off) |
 
