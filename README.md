@@ -190,6 +190,9 @@ You may modify Iso-Seq advanced analysis parameters for SMRT Link or pbsmrtpipe 
 | Cluster | Minimum Quiver Accuracy | hq_quiver_min_accuracy | 0.99 | Minimum allowed Quiver accuracy to classify an isoform as hiqh-quality. |
 | Cluster-Polish | Trim QVs 3' | qv_trim_3p | 30 | Ignore QV of n bases in the 3' end. |
 | Cluster-Polish | Trim QVs 5' | qv_trim_5p | 100 | Ignore QV of n bases in the 5' end. |
+| Maximum Length (max_length)  | --maxLength=15000    | Maximum length of subreads to use for generating CCS. Default = 7000 |
+| No Polish  (no_polish)  | --noPolish     | Only output the initial template derived from the POA (faster, less accurate). | 
+
 
 **Note**: The Iso-Seq Classify Only protocol does not perform isoform-level clustering and only uses a subset of advanced analysis parameters.
 
