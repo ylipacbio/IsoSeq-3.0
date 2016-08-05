@@ -449,7 +449,7 @@ __Converting PacBio RS and PacBio RS II data to BAM from command line__
 * __High QV | Low QV__
   * Iso-Seq Cluster generates polished consensus isoforms are classified into either
     high-quality or low-quality isoforms. We classify an isoform as high quality if 
-    its conseusus accuracy is no less than a cut-off, otherwise low quality.
+    its consensus accuracy is no less than a cut-off, otherwise low quality.
     The default cut-off is **0.99**. You may change this value from command line, or
     via SMRT Link Advanced Analysis Parameters when creating an Iso-Seq job.
 
